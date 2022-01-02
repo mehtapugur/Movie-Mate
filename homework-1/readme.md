@@ -33,7 +33,11 @@ CSS is used for styling.
 | --- | 
 | <img src="https://user-images.githubusercontent.com/24686636/147887046-46e0c707-5e0a-4866-ad45-5ca08b6fa305.png" width="600px"> |
 
+| Start | Finish | 
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/24686636/147887007-5bfa427b-a168-4190-a432-636eb7b52ec3.png"> | <img src="https://user-images.githubusercontent.com/24686636/147887046-46e0c707-5e0a-4866-ad45-5ca08b6fa305.png" width="600px"> |
 
+<img src="https://user-images.githubusercontent.com/24686636/147887134-aba68894-3051-4659-8051-b6e2cd10bc46.mp4">
 
 ## :computer: Setup
   
