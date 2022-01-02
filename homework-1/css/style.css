@@ -1,0 +1,105 @@
+* {
+
+}
+
+body{
+ /* background-color: #C8BCAB;
+ border-color: #707E76; */
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+ /* margin-top: 2rem;*/
+}
+
+.puzzle div {
+  position:relative;
+  height: 9rem;
+  width: 9rem;
+  border: 2px dashed gray;
+  display: inline-block;
+  margin: 0;
+}
+
+.puzzle {
+  width:27.6rem;
+  height:27.5rem;
+  background:plum;
+  /*border: 3px solid rgb(150, 149, 149);*/
+  margin: auto;
+}
+
+.box {
+  width: 6.5rem;
+  height: 6.5rem;
+ /* border: 2px solid #333;*/
+  border-radius: 0.5rem;
+  margin: .7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  user-select: none;
+  cursor: move;
+  transition: 0.5s;
+}
+.box span {
+  pointer-events: none;
+}
+
+#box-a{
+  background-image: url("../assets/img/bir.png");
+}
+
+#box-b{
+  background-image: url("../assets/img/iki.png");
+}
+
+#box-c{
+  background-image: url("../assets/img/uc.png");
+}
+
+#box-d{
+  background-image: url("../assets/img/dort.png");
+}
+
+#box-e{
+  background-image: url("../assets/img/bes.png");
+}
+
+#box-f{
+  background-image: url("../assets/img/alti.png");
+}
+
+#box-g{
+  background-image: url("../assets/img/yedi.png");
+}
+
+#box-h{
+  background-image: url("../assets/img/sekiz.png");
+}
+
+#box-i{
+  background-image: url("../assets/img/dokuz.png");
+}
