@@ -10,7 +10,6 @@ initiateGame();
 
 function initiateGame() {
   const randomImgPieces = generateRandomItemsArray(totalPieces, piecesArray);
-  //console.log(randomImgPieces);
 
   for (let i = 0; i < totalPieces; i++) {
     let mockID = "piece-" + randomImgPieces[i];
@@ -30,19 +29,8 @@ function generateRandomItemsArray(n, originalArray) {
   return res;
 }
 
-/* olmadı
-for (let i = 1; i <= totalPieces; i++) {
-  let pieceID = "piece-" + i;
-  console.log("pieceID: ", pieceID);
-  const piece = document.getElementById(pieceID);
-  console.log("piece: ", piece);
-  piece.style.backgroundImage = `url(../assets/img/${i}.png)`;
-} */
-
 draggableElements.forEach((elem) => {
   elem.addEventListener("dragstart", dragStart);
-  // elem.addEventListener("drag", drag);
-  // elem.addEventListener("dragend", dragEnd);
 });
 
 droppableElements.forEach((elem) => {
@@ -60,7 +48,7 @@ function dragStart(event) {
 
 function dragOver(event) {
   if (!event.target.classList.contains("dropped")) {
-    event.preventDefault(); // Prevent default to allow drop
+    event.preventDefault();
   }
 }
 
@@ -81,11 +69,11 @@ function drop(event) {
   event.target.classList.remove("droppable-hover");
   const draggableElementData = event.dataTransfer.getData("text");
   const droppableElementData = event.target.getAttribute("data-id");
+
   if (draggableElementData === droppableElementData) {
     win.play();
     event.target.classList.add("dropped");
     const draggableElement = document.getElementById(draggableElementData);
-    //event.target.style.backgroundColor =
     draggableElement.classList.add("dragged");
     draggableElement.setAttribute("draggable", "false");
     event.target.insertAdjacentHTML(
