@@ -49,13 +49,31 @@ body {
   margin: auto;
 }
 
-p {
+header {
   font-size: 2rem;
   /*justify-content: center;*/
   text-align: center;
   margin-top: 1.2rem;
   margin-bottom: .8rem;
   opacity: .45;
+}
+
+footer {
+  font-size: .9rem;
+  /*justify-content: center;*/
+  text-align: center;
+  margin-bottom: .8rem;
+  opacity: .45;
+}
+
+footer a{
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 .box {
