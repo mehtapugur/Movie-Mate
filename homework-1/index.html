@@ -10,29 +10,33 @@
 </head>
 
 <body>
-  <div class="images">
-    <div class="box" draggable="true" id="box-a"></div>
-    <div class="box" draggable="true" id="box-b"></div>
-    <div class="box" draggable="true" id="box-c"></div>
-    <div class="box" draggable="true" id="box-d"></div>
-    <div class="box" draggable="true" id="box-e"></div>
-    <div class="box" draggable="true" id="box-f"></div>
-    <div class="box" draggable="true" id="box-g"></div>
-    <div class="box" draggable="true" id="box-h"></div>
-    <div class="box" draggable="true" id="box-i"></div>
-  </div>
-  <div class="puzzle">
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-  </div>
 
+  <p>P U Z Z L E</p>
+  <div class="images draggable-elements">
+    <div class="box draggable" draggable="true" id="piece-1"></div>
+    <div class="box draggable" draggable="true" id="piece-2"></div>
+    <div class="box draggable" draggable="true" id="piece-3"></div>
+    <div class="box draggable" draggable="true" id="piece-4"></div>
+    <div class="box draggable" draggable="true" id="piece-5"></div>
+    <div class="box draggable" draggable="true" id="piece-6"></div>
+    <div class="box draggable" draggable="true" id="piece-7"></div>
+    <div class="box draggable" draggable="true" id="piece-8"></div>
+    <div class="box draggable" draggable="true" id="piece-9"></div>
+  </div>
+  <div class="puzzle droppable-elements">
+    <div class="droppable" data-id="piece-1"></div>
+    <div class="droppable" data-id="piece-2"></div>
+    <div class="droppable" data-id="piece-3"></div>
+    <div class="droppable" data-id="piece-4"></div>
+    <div class="droppable" data-id="piece-5"></div>
+    <div class="droppable" data-id="piece-6"></div>
+    <div class="droppable" data-id="piece-7"></div>
+    <div class="droppable" data-id="piece-8"></div>
+    <div class="droppable" data-id="piece-9">
+      <span></span>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
