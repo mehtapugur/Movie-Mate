@@ -1,5 +1,7 @@
 const draggableElements = document.querySelectorAll(".draggable");
 const droppableElements = document.querySelectorAll(".droppable");
+const win = new Audio("../assets/audio/win.wav");
+const error = new Audio("../assets/audio/error.wav");
 
 const totalPieces = 9;
 const piecesArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -8,7 +10,7 @@ initiateGame();
 
 function initiateGame() {
   const randomImgPieces = generateRandomItemsArray(totalPieces, piecesArray);
-  console.log(randomImgPieces);
+  //console.log(randomImgPieces);
 
   for (let i = 0; i < totalPieces; i++) {
     let mockID = "piece-" + randomImgPieces[i];
@@ -27,6 +29,15 @@ function generateRandomItemsArray(n, originalArray) {
   }
   return res;
 }
+
+/* olmadı
+for (let i = 1; i <= totalPieces; i++) {
+  let pieceID = "piece-" + i;
+  console.log("pieceID: ", pieceID);
+  const piece = document.getElementById(pieceID);
+  console.log("piece: ", piece);
+  piece.style.backgroundImage = `url(../assets/img/${i}.png)`;
+} */
 
 draggableElements.forEach((elem) => {
   elem.addEventListener("dragstart", dragStart);
@@ -71,6 +82,7 @@ function drop(event) {
   const draggableElementData = event.dataTransfer.getData("text");
   const droppableElementData = event.target.getAttribute("data-id");
   if (draggableElementData === droppableElementData) {
+    win.play();
     event.target.classList.add("dropped");
     const draggableElement = document.getElementById(draggableElementData);
     //event.target.style.backgroundColor =
@@ -80,5 +92,7 @@ function drop(event) {
       "afterbegin",
       `<div id="${draggableElementData}"></div>`
     );
+  } else {
+    error.play();
   }
 }
