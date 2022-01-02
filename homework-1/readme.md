@@ -25,23 +25,17 @@ CSS is used for styling.
 
 ## :camera_flash: Screenshots
 
-| Start | 
-| --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/147887007-5bfa427b-a168-4190-a432-636eb7b52ec3.png"> |
-
-| Finish | 
-| --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/147887046-46e0c707-5e0a-4866-ad45-5ca08b6fa305.png" width="600px"> |
-
 | Start | Finish | 
 | --- | --- |
 | <img src="https://user-images.githubusercontent.com/24686636/147887007-5bfa427b-a168-4190-a432-636eb7b52ec3.png"> | <img src="https://user-images.githubusercontent.com/24686636/147887046-46e0c707-5e0a-4866-ad45-5ca08b6fa305.png"> |
 
-<img src="https://user-images.githubusercontent.com/24686636/147887134-aba68894-3051-4659-8051-b6e2cd10bc46.mp4">
+| Play | 
+| --- | 
+| https://user-images.githubusercontent.com/24686636/147887134-aba68894-3051-4659-8051-b6e2cd10bc46.mp4 |
 
 ## :computer: Setup
   
-  - To run the project, Git must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/week1-mehtapugur`` and press the enter button. After opening the downloaded project in the code editor, we opened the `index.html ` file on our browser.<br/><br/>
+  - To run the project, Git must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/week1-mehtapugur`` and press the enter button. After opening the downloaded project in the code editor, we opened the `index.html` file on our browser.<br/><br/>
  
 
 ## :memo: License
