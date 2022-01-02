@@ -1,6 +1,33 @@
 const draggableElements = document.querySelectorAll(".draggable");
 const droppableElements = document.querySelectorAll(".droppable");
 
+const totalPieces = 9;
+const piecesArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+initiateGame();
+
+function initiateGame() {
+  const randomImgPieces = generateRandomItemsArray(totalPieces, piecesArray);
+  console.log(randomImgPieces);
+
+  for (let i = 0; i < totalPieces; i++) {
+    let mockID = "piece-" + randomImgPieces[i];
+    draggableElements[i].setAttribute("id", mockID);
+  }
+}
+
+function generateRandomItemsArray(n, originalArray) {
+  let res = [];
+  let clonedArray = [...originalArray];
+  if (n > clonedArray.length) n = clonedArray.length;
+  for (let i = 1; i <= n; i++) {
+    const randomIndex = Math.floor(Math.random() * clonedArray.length);
+    res.push(clonedArray[randomIndex]);
+    clonedArray.splice(randomIndex, 1);
+  }
+  return res;
+}
+
 draggableElements.forEach((elem) => {
   elem.addEventListener("dragstart", dragStart);
   // elem.addEventListener("drag", drag);
