@@ -35,23 +35,33 @@ body {
   position:relative;
   height: 9rem;
   width: 9rem;
-  border: 2px dashed gray;
+ /* border: 1px dashed gray;*/
   display: inline-block;
   margin: 0;
+  background-color: #cccccc;
 }
 
 .puzzle {
-  width:27.6rem;
-  height:27.5rem;
-  background:plum;
+  width: 27.6rem;
+  height: 27.5rem;
+  /*background: plum;*/
   /*border: 3px solid rgb(150, 149, 149);*/
   margin: auto;
+}
+
+p {
+  font-size: 2rem;
+  /*justify-content: center;*/
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: .8rem;
+  opacity: .45;
 }
 
 .box {
   width: 6.5rem;
   height: 6.5rem;
- /* border: 2px solid #333;*/
+/* border: 2px solid #333;*/
   border-radius: 0.5rem;
   margin: .7rem;
   display: flex;
@@ -68,38 +78,116 @@ body {
   pointer-events: none;
 }
 
-#box-a{
+#piece-1{
   background-image: url("../assets/img/bir.png");
 }
 
-#box-b{
+#piece-2{
   background-image: url("../assets/img/iki.png");
 }
 
-#box-c{
+#piece-3{
   background-image: url("../assets/img/uc.png");
 }
 
-#box-d{
+#piece-4{
   background-image: url("../assets/img/dort.png");
 }
 
-#box-e{
+#piece-5{
   background-image: url("../assets/img/bes.png");
 }
 
-#box-f{
+#piece-6{
   background-image: url("../assets/img/alti.png");
 }
 
-#box-g{
+#piece-7{
   background-image: url("../assets/img/yedi.png");
 }
 
-#box-h{
+#piece-8{
   background-image: url("../assets/img/sekiz.png");
 }
 
-#box-i{
+#piece-9{
   background-image: url("../assets/img/dokuz.png");
+}
+
+.dragged {
+  opacity: 0.16;
+}
+
+/*
+.draggable-elements {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}*/
+/*
+.draggable {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  margin: 0rem 0.5rem;
+  cursor: move;
+  transition: opacity 0.2s;
+} */
+.draggable:hover {
+  /*opacity: 0.8;*/
+  transform: scale(1.05);
+}
+.droppable {
+ /* height: 6.5rem;
+  width: 6.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px dashed #111;*/
+  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+}
+.droppable span {
+  /*font-size: 1.25rem;*/
+  pointer-events: none; /* The element is never the target of pointer events */
+}
+
+/* Drag and Drop Related Styling */
+
+.droppable.droppable-hover {
+  /* background-color: #bee3f0; */
+  /*border-width: 3px;*/
+  transform: scale(1.1);
+ /* border: 2px dashed gray;*/
+  background-color: #dadada;
+  z-index: 10;
+}
+.droppable .dropped {
+  border-style: solid;
+  /*color: #fff;*/
+}
+.droppable .dropped span {
+ /* font-size: 0.75rem;
+  margin-top: 0.5rem;*/
+}
+
+
+.droppable .dropped i {
+  pointer-events: none;
+}
+.draggable .dragged {
+  user-select: none;
+  opacity: 0.1;
+  cursor: default;
+}
+.draggable .dragged:hover {
+  opacity: 0.1;
 }
