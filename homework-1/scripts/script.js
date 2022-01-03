@@ -40,7 +40,7 @@ droppableElements.forEach((elem) => {
   elem.addEventListener("drop", drop);
 });
 
-// Drag and Drop Functions
+/* Drag and Drop Functions */
 
 function dragStart(event) {
   event.dataTransfer.setData("text", event.target.id);
