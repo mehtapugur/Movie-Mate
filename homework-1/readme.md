@@ -3,7 +3,7 @@
 </div>
 
 ## :calling: About
-In this game you have to complete the picture of Merida character. This is a puzzle game where the picture pieces at the top change dynamically.
+In this game you have to complete the picture of Merida character. This is a puzzle game where the puzzle pieces at the top change dynamically.
 
 ## :gear: Technologies
 
@@ -12,7 +12,7 @@ In this game you have to complete the picture of Merida character. This is a puz
 - [JavaScript](https://www.javascript.com/)
 
 A puzzle game was developed using the JavaScript Drag and Drop API.<br/>
-Picture and sound files were used in the game.<br/>
+Image and audio files were used in the game.<br/>
 CSS is used for styling.
 <br/>
 
