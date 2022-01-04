@@ -33,7 +33,7 @@ https://user-images.githubusercontent.com/24686636/147887134-aba68894-3051-4659-
 
 ## :computer: Setup
   
-  - To run the project, Git must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/week1-mehtapugur`` and press the enter button. After opening the downloaded project in the code editor, we opened the `index.html` file on our browser.<br/><br/>
+  - To run the project, Git must be installed on your computer. After completing this installation, we open the git terminal. We write the following expression ``git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/week1-mehtapugur`` and press the enter button. After opening the downloaded project in the code editor, we open the `index.html` file on our browser.<br/><br/>
  
 
 ## :memo: License
