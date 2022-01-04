@@ -1,8 +1,35 @@
+// Gusto & RemoteTeam Node.js Bootcamp
+// Homework #1 for week #2
+// Mehtap Ugur
+
+
+//functions
+// when you drag and move on a valid drop target,
+// and leave the valid drop target this event trigger
+// Note: if you drop your drag element on valid drop target it will not trigger.
+
+/*
+----draggable----
+dragstart
+drag
+dragend
+----droppable----
+dragenter
+dragover
+dragleave
+drop
+*/
 const draggableElements = document.querySelectorAll(".draggable");
 const droppableElements = document.querySelectorAll(".droppable");
 const win = new Audio("../assets/audio/win.wav");
 const error = new Audio("../assets/audio/error.wav");
 
+//dragstart: The event occurs when the user starts to drag an element
+//dragend: The event occurs when the user has finished dragging an element
+// dragover: The event occurs when the dragged element is over the drop target
+// dragenter: The event occurs when the dragged element enters the drop target
+// dragleave:The event occurs when the dragged element leaves the drop target
+// drop: The event occurs when the dragged element is dropped on the drop target
 const totalPieces = 9;
 const piecesArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
@@ -40,7 +67,7 @@ droppableElements.forEach((elem) => {
   elem.addEventListener("drop", drop);
 });
 
-/* Drag and Drop Functions */
+// Drag and Drop Functions
 
 function dragStart(event) {
   event.dataTransfer.setData("text", event.target.id);
