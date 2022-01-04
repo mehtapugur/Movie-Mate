@@ -1,38 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+:root{
+  --clr-black: #333;
+  --clr-bg-green: rgba(131,148,140, 0.6);
+  --clr-puzzle-green: rgba(131,148,140, 0.4);
+  --clr-puzzle-hover: rgba(131,148,140, 0.3);
+}
+
+/*  Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: rgba(131,148,140, 0.6);
-  color: #333;
+  background-color: var(--clr-bg-green);
+  color: var(--clr-black);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.images {
-  display: flex;
-  justify-content: center;
-}
-
-.puzzle div {
-  position:relative;
-  height: 9rem;
-  width: 9rem;
-  display: inline-block;
-  margin: 0;
-  background-color: rgba(131,148,140, 0.4); 
-}
-
-.puzzle {
-  width: 27.6rem;
-  height: 27.5rem;
-  margin: auto;
 }
 
 header {
@@ -43,6 +32,28 @@ header {
   opacity: .6;
 }
 
+/* Puzzle Styles */
+.puzzle-pieces {
+  display: flex;
+  justify-content: center;
+}
+
+.puzzle div {
+  position: relative;
+  height: 9rem;
+  width: 9rem;
+  display: inline-block;
+  margin: 0;
+  background-color: var(--clr-puzzle-green); 
+}
+
+.puzzle {
+  width: 27.6rem;
+  height: 27.5rem;
+  margin: auto;
+}
+
+/* Footer Styles */
 footer {
   font-size: .9rem;
   text-align: center;
@@ -53,31 +64,60 @@ footer {
 footer a{
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: var(--clr-black);
 }
 
 a:hover{
   text-decoration: underline;
 }
 
-.box {
+/* Drag and Drop Styles */
+.draggable {
   width: 6.5rem;
   height: 6.5rem;
-  border-radius: 0.5rem;
-  margin: .7rem;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 4rem;
   font-weight: bold;
+  border-radius: 0.5rem;
+  margin: .7rem;
   user-select: none;
   cursor: move;
   transition: 0.5s;
 }
-.box span {
-  pointer-events: none;
+
+.dragged {
+  opacity: 0.16;
 }
+
+.draggable:hover {
+  transform: scale(1.05);
+}
+
+.droppable {
+  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+}
+
+.droppable.droppable-hover {
+  transform: scale(1.1);
+  background-color: var(--clr-puzzle-hover); 
+  z-index: 10;
+}
+
+.draggable .dragged {
+  user-select: none;
+  opacity: 0.1;
+  cursor: default;
+}
+.draggable .dragged:hover {
+  opacity: 0.1;
+}
+
+/*
+    Images Assignments 
+*/
 
 #piece-1{
   background-image: url("../assets/img/1.png");
@@ -113,36 +153,4 @@ a:hover{
 
 #piece-9{
   background-image: url("../assets/img/9.png");
-}
-
-.dragged {
-  opacity: 0.16;
-}
-
-.draggable:hover {
-  transform: scale(1.05);
-}
-.droppable {
-  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
-}
-
-/* Drag and Drop Related Styling */
-
-.droppable.droppable-hover {
-  transform: scale(1.1);
-  background-color: rgba(131,148,140, 0.3); 
-  z-index: 10;
-}
-
-.droppable .dropped {
-  border-style: solid;
-}
-
-.draggable .dragged {
-  user-select: none;
-  opacity: 0.1;
-  cursor: default;
-}
-.draggable .dragged:hover {
-  opacity: 0.1;
 }
