@@ -12,3 +12,5 @@
   - projeyi canlıya almak
   - MVC yapısına dikkat et
   - yorum satırları ekle
+  - git commit nasıl yazılır öğren ve yaz inşallah
+  - 
