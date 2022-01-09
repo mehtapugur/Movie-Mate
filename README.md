@@ -10,3 +10,5 @@
   - projenin yapım aşamalarını anlatan proje günlüğü
   - projeyi anlattığım bir videoyu youtube a atmak
   - projeyi canlıya almak
+  - MVC yapısına dikkat et
+  - yorum satırları ekle
