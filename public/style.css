@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+:root {
+  --clr-black: #333;
+  --clr-primary-white: #ffffff;
+  --color-black-light: rgba(37, 44, 40, 0.6);
+  --font-semibold: 600;
+  --color-primary-black: #000;
+  --color-btn-from: #9467d6;
+  --color-btn-to: #8254c7;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 2px 14px 2px rgb(99 93 255 / 20%);
+  --section-spacing: 1.5rem;
+  --color-primary-light: rgba(230, 229, 255, 0.4);
+}
+
+/*  Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--clr-primary-white);
+  color: var(--clr-black);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background page image */
+.mainpage-bg {
+  display: flex;
+  flex: 47%;
+  height: 100vh;
+  background-image: url("images/main-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 53%;
+  height: 100vh;
+  width: 28rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  color: var(--color-black-light);
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .cta__form__input {
+    margin-bottom: unset;
+    min-width: 25rem;
+  }
+}
+
+.cta__form__input {
+  border: none;
+  background-color: var(--color-primary-light);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  min-width: 25rem;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.35;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-spacing: 2.5rem;
+  }
+}
+
+.name-surname {
+  display: flex;
+  width: 25rem;
+}
+
+.name-surname input {
+  border: none;
+  background-color: var(--color-primary-light);
+  border-radius: var(--border-radius);
+  justify-content: space-around;
+  margin-bottom: 1.1rem;
+  padding: 1rem;
+  width: 12.25rem;
+  justify-content: space-around;
+  margin-right: 0.5rem;
+}
+
+.button--primary {
+  background: linear-gradient(
+    90deg,
+    var(--color-btn-from) 0,
+    var(--color-btn-to) 100%
+  );
+  border: 1px solid rgba(99, 93, 255, 0.2);
+  box-shadow: var(--box-shadow);
+  color: var(--clr-primary-white);
+}
+
+.button {
+  --button-height: 45px;
+  min-height: var(--button-height);
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: var(--border-radius);
+  font-weight: var(--font-semibold);
+  padding: 0.8rem 3rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.button:hover {
+  transform: scale(1.08);
+}
+
+.button a {
+  color: var(--clr-primary-white);
+  text-decoration: none;
+}
+
+.signup {
+  margin-top: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.sign-in span {
+  color: var(--color-black-light);
+}
+
+.sign-in a {
+  color: var(--color-btn-to);
+  font-weight: bold;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary-light);
+}
+
+.home-container button {
+  position: relative;
+  margin: 1rem;
+  padding: 0.8rem 2rem;
+}
+
+.home-container .container {
+  display: flex;
+  flex-direction: column;
+  width: 70% !important;
+}
+
+.row__title {
+  color: rgba(37, 44, 40, 0.7);
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.row--top-40 {
+  margin-top: 40px;
+}
+
+.row--top-20 {
+  margin-top: 20px;
+}
+.table__th {
+  color: #9eabb4;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 0 !important;
+  padding: 15px 8px !important;
+}
+
+.table-row {
+  border-bottom: 1px solid #e4e9ea;
+  background-color: var(--clr-primary-white);
+}
+.table__th:hover {
+  color: var(--color-primary-black);
+}
+
+.table-row__td {
+  padding: 15px 10px !important;
+  vertical-align: middle !important;
+  color: #53646f;
+  font-size: 2rem;
+  font-weight: 400;
+  position: relative;
+  line-height: 28px !important;
+  border: 0 !important;
+}
+
+.table-row__info {
+  display: inline-block;
+  padding-left: 14px;
+  vertical-align: middle;
+}
+
+.table-row__name {
+  color: var(--color-black-light);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 0px;
+}
+
+.table-row__username {
+  color: var(--color-black-light);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 0px;
+}
+.table-row__p-email {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  vertical-align: middle;
+  display: inline-block;
+  color: var(--color-black-light);
+}
+
+@media screen and (max-width: 991px) {
+  .table__thead {
+    display: none;
+  }
+  .table-row {
+    display: inline-block;
+    border: 0;
+    background-color: var(--clr-primary-white);
+    width: calc(33.3% - 13px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .table-row__info {
+    display: block;
+    padding-left: 0;
+  }
+
+  .table-row__td {
+    display: block;
+    text-align: center;
+    padding: 8px !important;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .table-row {
+    width: calc(50% - 13px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .table-row {
+    width: 100%;
+  }
+}

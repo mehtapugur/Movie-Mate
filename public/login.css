@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: box-border;
+  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  background: #f4f4f4;
+  height: 100vh;
+}
+
+.container {
+  width: 330px;
+  height: 550px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -275px;
+  margin-left: -165px;
+  text-align: center;
+  /*border: 1px solid red; */
+}
+
+.facebook,
+.google,
+.apple {
+  font-size: 15px;
+  font-weight: bold;
+  width: 329px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+.name {
+  display: flex;
+}
+.name input {
+  width: 147.5px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(0, 0, 0, 0.3);
+  font-size: 90%;
+  justify-content: space-around;
+  padding-left: 10px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.login-inner input {
+  width: 317px;
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(0, 0, 0, 0.3);
+  font-size: 90%;
+  padding-left: 10px;
+}
+
+.pasw {
+  line-height: 12px;
+  color: rgb(57, 70, 73);
+  font-size: 12px;
+  text-align: left;
+}
+
+.seperator {
+  border-top: 1px solid rgb(0, 35, 51);
+  height: 1px;
+  margin: 24px 0px;
+}
+
+.seperator p {
+  background: #f4f4f4;
+  color: rgb(0, 35, 51);
+  /*  display: block; */
+  margin: -7px auto;
+  text-align: center;
+  width: 30px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.signup {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #00ff84;
+  border-radius: 5px;
+  margin-top: 11px;
+}
+
+.sign-in {
+  line-height: 16px;
+  color: rgb(57, 70, 73);
+  font-size: 15px;
+  margin-top: 24px;
+}
+
+.sign-in a {
+  font-weight: bold;
+  color: rgb(55, 34, 211);
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.pr {
+  color: rgb(57, 70, 73);
+  font-size: 12px;
+  /*font-weight: bold;*/
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pr a {
+  font-weight: bold;
+}
+
+.pr a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background: #00e677;
+}
+
+.hov:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.signup:hover {
+  background-color: #00e677;
+}
+

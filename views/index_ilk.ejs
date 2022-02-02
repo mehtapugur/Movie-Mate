@@ -1,0 +1,26 @@
+<%- include("partials/_header"); %>
+    <!-- bu index ti yani register sayfası adını değiştirdim normal index sayfası yapmak için-->
+    <div class="mainpage-bg"></div>
+    <form class="form-field" method="post" action="/users/signup">
+        <h3 id="title">Registration Form</h3>
+        <div class="name-surname">
+            <input type="name" name="name" id="name" autocapitalize="off" autocorrect="off" placeholder="First Name"
+                required="" />
+            <input type="username" name="surname" id="surname" autocapitalize="off" autocorrect="off"
+                placeholder="Last Name" required="" />
+        </div>
+        <input type="email" name="email" id="email" autocapitalize="off" autocorrect="off" class="cta__form__input"
+            placeholder="👋 Email Address" required="">
+        <input type="username" name="username" id="username" autocapitalize="off" autocorrect="off"
+            class="cta__form__input" placeholder="Create username" required="">
+        <input type="password" name="password" id="password" autocapitalize="off" autocorrect="off"
+            class="cta__form__input" placeholder="Create password" required="">
+        <div class="signup">
+            <button type="submit" id="submit" class="button button--primary" aria-label="Sign Up">Sign Up</button>
+        </div>
+        <div class="sign-in">
+            <span>Already a member?</span>&nbsp
+            <a href="/login">Sign In</a>
+        </div>
+    </form>
+    <%- include("partials/_footer"); %>
