@@ -4,7 +4,7 @@
 # Bitirme projesi için inşallah
 
   - projeye güzel bir readme
-  - unit testleri
+  - er ve uml diyagramı
   - güzel bir tasarım scss ya da css ile
   - folder structure
   - projenin yapım aşamalarını anlatan proje günlüğü
