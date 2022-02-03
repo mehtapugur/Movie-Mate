@@ -10,7 +10,6 @@ const createToken = (id: string, browserInfo: string): string =>
   });
 
 export const createUser: RequestHandler = async (req, res) => {
-  console.log("came");
   const { name, surname, email, password } = req.body;
   const browserInfo = req.headers["user-agent"];
 
@@ -54,7 +53,7 @@ export const loginUser: RequestHandler = async (req, res) => {
         //send this token to cookie
         res.cookie("jwt", token, { httpOnly: true, maxAge: 600000 });
         //res.status(200).json({ user: user._id }); //?
-        res.status(200).redirect("/users/home");
+        res.status(200).redirect("/users/dashboard");
       } else {
         res.redirect(301, "login");
       }
@@ -66,11 +65,11 @@ export const loginUser: RequestHandler = async (req, res) => {
 };
 
 //get home page where users are listed
-export const getHomePage: RequestHandler = async (req, res) => {
+export const getDashboardPage: RequestHandler = async (req, res) => {
   //const users = await User.find();
   const repository = getManager().getRepository(User);
   const users = await repository.find();
-  res.status(200).render("home", {
+  res.status(200).render("dashboard", {
     users,
   });
 };
