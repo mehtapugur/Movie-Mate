@@ -4,7 +4,14 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import { User } from "./entity/user.entity";
+import { getManager } from "typeorm";
+import { RequestHandler } from "express";
 import path from "path";
+import bcrypt from "bcrypt";
+//const { OAuth2Client } = require("google-auth-library");
+const passport = require("passport");
+const { Strategy } = require("passport-google-oauth20");
+//const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, SESSION_SECRET } = process.env;
 // import authRoute from "./routes/authRoute";
 // import { auth, userControl } from "./middlewares/authMiddleware";
 // import { getHomePage } from "./controllers/authController";
@@ -16,6 +23,8 @@ require("dotenv").config();
 
 // view engine
 app.set("view engine", "ejs");
+
+//google client id: 679579824962-tov52je75m1m9cucmt1muqbc5cod6otf.apps.googleusercontent.com
 
 //give error
 process.on("uncaughtException", (err) => {
@@ -40,6 +49,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(passport.initialize());
+//app.use(passport.session());
 
 createConnection({
   type: "mysql",
@@ -58,6 +69,65 @@ app.use(
     extended: true,
   })
 );
+
+// const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
+// app.post("/google", (req, res) => {
+//   const { token } = req.body;
+//   client
+//     .verifyIdToken({
+//       idToken: token,
+//       audience: process.env.GOOGLE_CLIENT_ID,
+//     })
+//     .then((response) => res.send(response));
+// });
+
+passport.use(
+  new Strategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "http://localhost:3000/google/return", //http://localhost:3000
+    },
+    (accessToken, refreshToken, profile, cb) => {
+      console.log(profile);
+      console.log("*****************************");
+      console.log(profile.id);
+      console.log(profile.emails[0].value);
+      console.log(profile.name.givenName);
+      console.log(profile.name.familyName);
+      const createUser = async () => {
+        console.log("geldi1");
+        try {
+          console.log("geldi2");
+          const repository = getManager().getRepository(User);
+          const password = profile.id;
+          //create new user
+          console.log("geldim");
+          const user = await repository.save({
+            //id: profile.id,
+            name: profile.name.givenName,
+            surname: profile.name.familyName,
+            email: profile.emails[0].value,
+            password: await bcrypt.hash(password, 8),
+          });
+        } catch (err) {
+          console.log("hata");
+        }
+      };
+      createUser();
+      return cb(null, profile);
+    }
+  )
+);
+
+passport.serializeUser((user, cb) => {
+  cb(null, user);
+});
+
+passport.deserializeUser((obj, cb) => {
+  cb(null, obj);
+});
 
 // //check user
 // app.use(userControl);

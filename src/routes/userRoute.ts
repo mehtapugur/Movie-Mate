@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const passport = require("passport");
+
 import {
   loginUser,
   createUser,
@@ -30,6 +32,15 @@ router.get(
     res.redirect("/");
   }
 );
+
+// router.get(
+//   "/return",
+//   passport.authenticate("google", { failureRedirect: "/" }),
+//   (req, res, next) => {
+//     res.redirect("/");
+//   }
+// );
+
 // router
 //   .route("/signup")
 //   .post(registrationValidation, checkErrorsForRegister, createUser);
@@ -41,6 +52,13 @@ router.get("/dashboard", auth, getDashboardPage);
 //Login and Create
 router.post("/login", loginUser);
 router.post("/signup", createUser);
+
+// router.get(
+//   "/google",
+//   passport.authenticate("google", { scope: ["profile"] })
+// );
+
+// n
 
 const userRouter = router;
 export default userRouter;
