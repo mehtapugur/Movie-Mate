@@ -4,42 +4,47 @@
 
   <body class="host_version">
 
+    <form class="form-field" method="post" action="/users/signup">
+      <div class="container">
+        <div class="facebook hov">
+          <a href="#">Continue with Facebook</a>
+        </div>
+        <div class="google hov">
+          <a href="#">Continue with Google</a>
+        </div>
+        <div class="apple hov">
+          <a href="#">Continue with Apple</a>
+        </div>
+        <div class="seperator">
+          <p>or</p>
+        </div>
+        <div class="name">
+          <input type="name" name="name" id="name" autocapitalize="off" autocorrect="off" placeholder="First Name"
+            required="" />
+          <input type="surname" name="surname" id="surname" autocapitalize="off" autocorrect="off"
+            placeholder="Last Name" required="" />
+        </div>
+        <div class="login-inner">
+          <input type="email" name="email" id="email" autocapitalize="off" autocorrect="off"
+            placeholder="👋 Email Address" required="" />
+          <input type="password" name="password" id="password" autocapitalize="off" autocorrect="off"
+            placeholder="Create password" required="" />
+        </div>
 
-    <div class="container">
-      <div class="facebook hov">
-        <a href="#">Continue with Facebook</a>
+        <div class="pasw">Password must be at least 8 characters long.</div>
+        <div class="signup">
+          <button type="submit" id="submit" aria-label="Sign Up">Sign Up</button>
+        </div>
+        <div class="sign-in">
+          <span>Already a member?</span>
+          <a href="/login">Sign In</a>
+        </div>
+        <div class="seperator"></div>
+        <div class="pr">By signing up you agree to Skillshare's <a target="_blank" href="#">Terms of Service</a> and <a
+            target="_blank" href="#">Privacy Policy.</a> This page is protected by reCAPTCHA and is subject to Google's
+          <a target="_blank" href="#">Terms of Service</a> and <a target="_blank" href="#">Privacy Policy.</a>
+        </div>
       </div>
-      <div class="google hov">
-        <a href="#">Continue with Google</a>
-      </div>
-      <div class="apple hov">
-        <a href="#">Continue with Apple</a>
-      </div>
-      <div class="seperator">
-        <p>or</p>
-      </div>
-      <div class="name">
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
-      </div>
-      <div class="login-inner">
-        <input type="text" placeholder="Email Address" />
-        <input type="password" placeholder="Create password" />
-      </div>
-
-      <div class="pasw">Password must be at least 8 characters long.</div>
-      <div class="signup">
-        <a href="#">Sign up</a>
-      </div>
-      <div class="sign-in">
-        <span>Already a member?</span>
-        <a href="/login">Sign In</a>
-      </div>
-      <div class="seperator"></div>
-      <div class="pr">By signing up you agree to Skillshare's <a target="_blank" href="#">Terms of Service</a> and <a
-          target="_blank" href="#">Privacy Policy.</a> This page is protected by reCAPTCHA and is subject to Google's
-        <a target="_blank" href="#">Terms of Service</a> and <a target="_blank" href="#">Privacy Policy.</a>
-      </div>
-    </div>
+    </form>
 
     <%- include("partials/_footer"); %>

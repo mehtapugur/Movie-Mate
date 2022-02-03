@@ -1,17 +1,18 @@
 import express from "express";
-// import session from "express-session";
-// import cookieParser from "cookie-parser";
+import session from "express-session";
+import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-// import { createConnection } from "typeorm";
-// import { User } from "./entity/user.entity";
+import { createConnection } from "typeorm";
+import { User } from "./entity/user.entity";
 import path from "path";
 // import authRoute from "./routes/authRoute";
 // import { auth, userControl } from "./middlewares/authMiddleware";
 // import { getHomePage } from "./controllers/authController";
 import pageRoute from "./routes/pageRoute";
+import userRoute from "./routes/userRoute";
 
 const app = express();
-// require("dotenv").config();
+require("dotenv").config();
 
 // view engine
 app.set("view engine", "ejs");
@@ -27,30 +28,30 @@ process.on("uncaughtException", (err) => {
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(cookieParser());
-// app.use(
-//   session({
-//     secret: process.env.SESSION_SECRET,
-//     cookie: {
-//       maxAge: 600000,
-//       httpOnly: true,
-//     },
-//     resave: false,
-//     saveUninitialized: true,
-//   })
-// );
+app.use(cookieParser());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 600000,
+      httpOnly: true,
+    },
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
-// createConnection({
-//   type: "mysql",
-//   host: "localhost",
-//   port: 3306,
-//   username: "root",
-//   password: "root",
-//   database: "node_auth",
-//   entities: [User],
-//   synchronize: false,
-//   logging: false,
-// });
+createConnection({
+  type: "mysql",
+  host: "localhost",
+  port: 3306,
+  username: "root",
+  password: "root",
+  database: "node_auth",
+  entities: [User],
+  synchronize: false,
+  logging: false,
+});
 
 app.use(
   bodyParser.urlencoded({
@@ -72,6 +73,7 @@ app.use(
 // app.use("/users", authRoute);
 
 app.use("/", pageRoute);
+app.use("/users", userRoute);
 
 // //const PORT = process.env.PORT;
 // const HOST = process.env.HOST;
