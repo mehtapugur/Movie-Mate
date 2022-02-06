@@ -8,9 +8,10 @@ export const auth: RequestHandler = (req, res, next) => {
   //get token from cookie
   const token = req.cookies.jwt;
   req.session.browserInfo = req.headers["user-agent"]; //browser information
-
+  console.log("buraya kadar geldim");
   //verify token
   if (token) {
+    console.log("token var");
     jwt.verify(
       token,
       process.env.JWT_SECRET,
@@ -26,6 +27,7 @@ export const auth: RequestHandler = (req, res, next) => {
       }
     );
   } else {
+    console.log("hata aldım");
     res.redirect("/login");
   }
 };
