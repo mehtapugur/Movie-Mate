@@ -12,6 +12,13 @@ import {
 // import { editValidation, checkErrorsForEdit } from "../middlewares/editValidator"
 // import { hasAuth } from "../middlewares/auth"
 import { auth } from "../middlewares/authMiddleware";
+import {
+  getAddPage,
+  createMovie,
+  getAllMovies,
+  deleteMovie,
+  getMovie,
+} from "../controllers/userController";
 
 // //http://localhost:3000/users/
 // //Routes for register login POST, get dashboard page and logout process
@@ -59,6 +66,14 @@ router.post("/signup", createUser);
 // );
 
 // n
+
+//router.get("/movies", movieController.getAllMovies); //?
+router.get("/add", auth, getAddPage);
+//router.post("/add", createMovie);
+router.post("/movies", createMovie);
+router.get("/movies", getAllMovies);
+router.get("/movies/:id", getMovie);
+router.delete("/movies/:id", deleteMovie);
 
 const userRouter = router;
 export default userRouter;
