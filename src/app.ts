@@ -4,10 +4,13 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import { User } from "./entity/user.entity";
+import { Movie } from "./entity/movie.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
+const methodOverride = require("method-override");
 import path from "path";
 import bcrypt from "bcrypt";
+import jwt, { VerifyErrors } from "jsonwebtoken";
 //const { OAuth2Client } = require("google-auth-library");
 const passport = require("passport");
 const { Strategy } = require("passport-google-oauth20");
@@ -23,8 +26,6 @@ require("dotenv").config();
 
 // view engine
 app.set("view engine", "ejs");
-
-//google client id: 679579824962-tov52je75m1m9cucmt1muqbc5cod6otf.apps.googleusercontent.com
 
 //give error
 process.on("uncaughtException", (err) => {
@@ -51,6 +52,11 @@ app.use(
 );
 app.use(passport.initialize());
 //app.use(passport.session());
+app.use(
+  methodOverride("_method", {
+    methods: ["POST", "GET"],
+  })
+);
 
 createConnection({
   type: "mysql",
@@ -59,7 +65,7 @@ createConnection({
   username: "root",
   password: "root",
   database: "node_auth",
-  entities: [User],
+  entities: [User, Movie],
   synchronize: false,
   logging: false,
 });
@@ -102,8 +108,6 @@ passport.use(
           console.log("geldi2");
           const repository = getManager().getRepository(User);
           const password = profile.id;
-          //create new user
-          console.log("geldim");
           const user = await repository.save({
             //id: profile.id,
             name: profile.name.givenName,
@@ -111,6 +115,16 @@ passport.use(
             email: profile.emails[0].value,
             password: await bcrypt.hash(password, 8),
           });
+
+          //const browserInfo = req.headers["user-agent"];
+          // const createToken = (id: string, browserInfo: string): string =>
+          //   jwt.sign({ id, browserInfo }, process.env.JWT_SECRET, {
+          //     expiresIn: "60m", //minutes, session time
+          //   });
+          // const token = createToken(user.id, browserInfo);
+          // res.cookie("jwt", token, { httpOnly: true, maxAge: 600000 });
+          //create new user
+          console.log("geldim");
         } catch (err) {
           console.log("hata");
         }
