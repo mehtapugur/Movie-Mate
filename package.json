@@ -24,6 +24,7 @@
     "express-validation": "^3.0.8",
     "google-auth-library": "^7.11.0",
     "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
