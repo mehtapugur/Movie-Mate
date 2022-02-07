@@ -163,3 +163,35 @@ export const getMovie: RequestHandler = async (req, res) => {
     });
   }
 };
+
+export const updateMovie: RequestHandler = async (req, res) => {
+  //const { name, description } = await req.body;
+  console.log("updategeldi");
+  try {
+    const repository = getManager().getRepository(Movie);
+    const movie = await repository.findOne(req.params.id);
+
+    movie.name = req.body.name;
+    movie.description = req.body.description;
+    console.log(req.body.name, req.body.description);
+    await repository.save(movie);
+    // res.render("movie", {
+    //   movie,
+    // });
+
+    res.redirect("/users/movies");
+  } catch {
+    res.status(400).json({
+      status: "fail",
+      Error,
+    });
+  }
+};
+
+export const getEditPage: RequestHandler = async (req, res) => {
+  const repository = getManager().getRepository(Movie);
+  const movie = await repository.findOne(req.params.id);
+  res.status(200).render("edit", {
+    movie,
+  });
+};
