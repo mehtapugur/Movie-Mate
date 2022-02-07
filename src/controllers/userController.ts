@@ -4,6 +4,7 @@ import { User } from "../entity/user.entity";
 import { Movie } from "../entity/movie.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
+import session from "express-session";
 
 const createToken = (id: string, browserInfo: string): string =>
   jwt.sign({ id, browserInfo }, process.env.JWT_SECRET, {
@@ -50,7 +51,7 @@ export const loginUser: RequestHandler = async (req, res) => {
       if (same) {
         //create a token with JWT
         const token = createToken(user.id, browserInfo);
-
+        req.session.userID = user.id; //?
         //send this token to cookie
         res.cookie("jwt", token, { httpOnly: true, maxAge: 600000 });
         //res.status(200).json({ user: user._id }); //?
@@ -68,6 +69,7 @@ export const loginUser: RequestHandler = async (req, res) => {
 //get home page where users are listed
 export const getDashboardPage: RequestHandler = async (req, res) => {
   //const users = await User.find();
+  console.log(req.session.userID);
   const repository = getManager().getRepository(User);
   const users = await repository.find();
   res.status(200).render("dashboard", {
