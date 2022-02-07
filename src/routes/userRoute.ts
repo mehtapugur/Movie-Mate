@@ -14,10 +14,12 @@ import {
 import { auth } from "../middlewares/authMiddleware";
 import {
   getAddPage,
+  getEditPage,
   createMovie,
   getAllMovies,
   deleteMovie,
   getMovie,
+  updateMovie,
 } from "../controllers/userController";
 
 // //http://localhost:3000/users/
@@ -74,6 +76,8 @@ router.post("/movies", createMovie);
 router.get("/movies", getAllMovies);
 router.get("/movies/:id", getMovie);
 router.delete("/movies/:id", deleteMovie);
+router.get("/movies/edit/:id", getEditPage);
+router.put("/movies/:id", updateMovie);
 
 const userRouter = router;
 export default userRouter;
