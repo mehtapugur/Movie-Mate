@@ -27,6 +27,8 @@ require("dotenv").config();
 // view engine
 app.set("view engine", "ejs");
 
+//globalThis.userIN = null;
+
 //give error
 process.on("uncaughtException", (err) => {
   console.log("UNCAUGHT EXCEPTION, APP SHUTTING NOW!!");
@@ -50,6 +52,12 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use("*", (req, res, next) => {
+  globalThis.userIN = req.session.userID;
+  console.log("usersIN:", globalThis.userIN);
+  next();
+});
+
 app.use(passport.initialize());
 //app.use(passport.session());
 app.use(
