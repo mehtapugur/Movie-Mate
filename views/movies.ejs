@@ -8,7 +8,7 @@
           </div>
           <div class="col-md-12">
             <button type="button" class="button button--primary" aria-label="Logout">
-              <a href="/users/add">Add movies</a>
+              <a href="/users/add_movie">Add movies</a>
             </button>
           </div>
 
@@ -33,14 +33,14 @@
                               <%= movies[i].description %>
                           </p>
                         </div>
-                        <a href="/users/movies/<%= movies[i].id %>" class="position-absolute tm-img-overlay">
+                        <a href="/users/datas/<%= movies[i].id %>" class="position-absolute tm-img-overlay">
                           <i class="fas fa-play tm-overlay-icon">ac</i>
                         </a>
                       </td>
                       <td class="table-row__td">
                         <div class="table-row__info">
                           <div class="text-center">
-                            <a href="/users/movies/<%= movies[i].id %>?_method=DELETE"
+                            <a href="/users/datas/<%= movies[i].id %>?_method=DELETE"
                               class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"
                               onclick="return confirm('Are you sure?')"><span>Delete
                                 Movie</span></a>
@@ -50,7 +50,7 @@
                       <td class="table-row__td">
                         <div class="table-row__info">
                           <div class="text-center">
-                            <a href="/users/movies/edit/<%= movies[i].id %>"
+                            <a href="/users/datas/edit/<%= movies[i].id %>"
                               class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Update
                                 Details</span></a>
                           </div>
