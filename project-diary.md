@@ -13,4 +13,5 @@
   - data ve shared tabloları
   - movies ve actors sayfalarını ayır
   - dashboard listele
+  - jquery ekledim
  
