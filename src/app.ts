@@ -54,7 +54,7 @@ app.use(
 );
 app.use("*", (req, res, next) => {
   globalThis.userIN = req.session.userID;
-  console.log("usersIN:", globalThis.userIN);
+  console.log("userIN:", globalThis.userIN);
   next();
 });
 
