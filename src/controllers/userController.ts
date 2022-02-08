@@ -113,8 +113,21 @@ export const createMovie: RequestHandler = async (req, res) => {
 
 export const getAllMovies: RequestHandler = async (req, res) => {
   try {
+    console.log("hii1");
     const repository = getManager().getRepository(Movie);
-    const movies = await repository.find();
+    // const movies = await repository.find({
+    //   id: globalThis.userIN
+    // });
+    console.log("hii2");
+    const movies = await repository.find({
+      //where: { id: globalThis.userIN, type: "movie" }
+      where: { id: globalThis.userIN },
+    });
+    console.log(movies);
+    console.log("hii3");
+    //   id: globalThis.userIN
+    // });
+    //console.log(movies[0].type); calismiyo
 
     res.status(200).render("movies", {
       movies,
