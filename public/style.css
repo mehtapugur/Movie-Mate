@@ -32,15 +32,92 @@ body {
 }
 
 /* Background page image */
-.mainpage-bg {
-  display: flex;
+.index_main {
+  flex: 100%;
+  width: 100vw;
+  height: 100vh;
+  /*display: flex;
   flex: 47%;
   height: 100vh;
-  background-image: url("images/main-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   justify-content: center;
+  align-items: center; 
+  background-size: cover; */
+  background-image: url("images/merida.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.index_navbar {
+  display: flex;
+  /*justify-content: center;
+  align-items: center;*/
+  margin: 1rem;
+}
+
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.index_navbar {
+  /*background-color: var(--clr-grey1); */
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* width: 100%;*/
+  z-index: 100;
+}
+
+.index_navbar div {
+  height: 4rem;
+  max-width: 80%;
+  /* margin: 0 auto;*/
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.index_navbar div > a {
+  font-family: "Epilogue", sans-serif;
+  color: var(--clr-white1);
+  font-size: 2.1rem;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.index_navbar ul {
+  display: flex;
+}
+
+.index_navbar li {
+  font-family: "Epilogue", sans-serif;
+  color: var(--clr-white1);
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 1rem 1.4rem 0.8rem 1.4rem;
+  background-color: transparent;
+  border-radius: 2px;
+  margin: auto 0 auto 0.8rem;
+  transition: 0.125s ease-in;
+}
+
+.index_navbar li:hover {
+  background-color: var(--clr-white2);
+  border-bottom: 3px solid var(--clr-white1);
+}
+
+.header_nav {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  justify-content: space-between;
+}
+
+.nav_left_side,
+.nav_left_side ul {
+  display: flex;
 }
 
 .form-field {
