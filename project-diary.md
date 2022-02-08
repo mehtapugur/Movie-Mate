@@ -8,4 +8,9 @@
   - sayfa tasarımları eksik
   - ekleme silme güncelleme ok
   - db ayarları eksik
+
+### 8th
+  - data ve shared tabloları
+  - movies ve actors sayfalarını ayır
+  - dashboard listele
  
