@@ -13,13 +13,17 @@ import {
 // import { hasAuth } from "../middlewares/auth"
 import { auth } from "../middlewares/authMiddleware";
 import {
-  getAddPage,
+  getAddMoviePage,
+  getAddActorPage,
   getEditPage,
+  createData,
   createMovie,
+  createActor,
   getAllMovies,
-  deleteMovie,
-  getMovie,
-  updateMovie,
+  getAllActors,
+  deleteData,
+  getData,
+  updateData,
 } from "../controllers/userController";
 
 // //http://localhost:3000/users/
@@ -69,15 +73,19 @@ router.post("/signup", createUser);
 
 // n
 
-//router.get("/movies", movieController.getAllMovies); //?
-router.get("/add", auth, getAddPage);
-//router.post("/add", createMovie);
+//router.get("/datas", dataController.getAllDatas); //?
+router.get("/add_movie", auth, getAddMoviePage);
+router.get("/add_actor", auth, getAddActorPage);
+//router.post("/add", createData);
+router.post("/datas", createData);
 router.post("/movies", createMovie);
+router.post("/actors", createActor);
 router.get("/movies", getAllMovies);
-router.get("/movies/:id", getMovie);
-router.delete("/movies/:id", deleteMovie);
-router.get("/movies/edit/:id", getEditPage);
-router.put("/movies/:id", updateMovie);
+router.get("/actors", getAllActors);
+router.get("/datas/:id", getData);
+router.delete("/datas/:id", deleteData);
+router.get("/datas/edit/:id", getEditPage);
+router.put("/datas/:id", updateData);
 
 const userRouter = router;
 export default userRouter;
