@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import { User } from "./entity/user.entity";
-import { Movie } from "./entity/movie.entity";
+import { Data } from "./entity/data.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
 const methodOverride = require("method-override");
@@ -73,7 +73,7 @@ createConnection({
   username: "root",
   password: "root",
   database: "node_auth",
-  entities: [User, Movie],
+  entities: [User, Data],
   synchronize: false,
   logging: false,
 });
