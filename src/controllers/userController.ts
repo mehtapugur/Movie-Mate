@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { User } from "../entity/user.entity";
-import { Movie } from "../entity/movie.entity";
+import { Data } from "../entity/data.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
 import session from "express-session";
@@ -77,32 +77,89 @@ export const getDashboardPage: RequestHandler = async (req, res) => {
   });
 };
 
-export const getAddPage: RequestHandler = async (req, res) => {
+export const getAddMoviePage: RequestHandler = async (req, res) => {
   //const users = await User.find();
   //const repository = getManager().getRepository(User);
   //const users = await repository.find();
-  res.status(200).render("add");
+  res.status(200).render("add_movie");
+};
+
+export const getAddActorPage: RequestHandler = async (req, res) => {
+  //const users = await User.find();
+  //const repository = getManager().getRepository(User);
+  //const users = await repository.find();
+  res.status(200).render("add_actor");
+};
+
+export const createData: RequestHandler = async (req, res) => {
+  const { name, description } = await req.body;
+  //const data = await Data.create(req.body);
+  const repository = await getManager().getRepository(Data);
+  const data = await repository.save({
+    name: name,
+    description: description,
+  });
+  const datas = await repository.find();
+  try {
+    // res.status(201).json({
+    //   status: "success",
+    //   data,
+    // });
+    res.status(200).render("datas", {
+      datas,
+      //page_name: "datas",
+    });
+    //res.status(201).redirect("/users/datas");
+  } catch {
+    res.status(400).json({
+      status: "fail",
+      Error,
+    });
+  }
 };
 
 export const createMovie: RequestHandler = async (req, res) => {
   const { name, description } = await req.body;
-  //const movie = await Movie.create(req.body);
-  const repository = await getManager().getRepository(Movie);
+  const repository = await getManager().getRepository(Data);
   const movie = await repository.save({
     name: name,
     description: description,
+    type: "movie",
+    user_id: globalThis.userIN,
   });
-  const movies = await repository.find();
+  const movies = await repository.find({
+    where: { user_id: globalThis.userIN, type: "movie" },
+  });
   try {
-    // res.status(201).json({
-    //   status: "success",
-    //   movie,
-    // });
     res.status(200).render("movies", {
       movies,
-      //page_name: "movies",
+      //page_name: "datas",
     });
-    //res.status(201).redirect("/users/movies");
+  } catch {
+    res.status(400).json({
+      status: "fail",
+      Error,
+    });
+  }
+};
+
+export const createActor: RequestHandler = async (req, res) => {
+  const { name, description } = await req.body;
+  const repository = await getManager().getRepository(Data);
+  const actor = await repository.save({
+    name: name,
+    description: description,
+    type: "actor",
+    user_id: globalThis.userIN,
+  });
+  const actors = await repository.find({
+    where: { user_id: globalThis.userIN, type: "actor" },
+  });
+  try {
+    res.status(200).render("actors", {
+      actors,
+      //page_name: "datas",
+    });
   } catch {
     res.status(400).json({
       status: "fail",
@@ -114,24 +171,24 @@ export const createMovie: RequestHandler = async (req, res) => {
 export const getAllMovies: RequestHandler = async (req, res) => {
   try {
     console.log("hii1");
-    const repository = getManager().getRepository(Movie);
-    // const movies = await repository.find({
+    const repository = getManager().getRepository(Data);
+    // const datas = await repository.find({
     //   id: globalThis.userIN
     // });
     console.log("hii2");
     const movies = await repository.find({
-      //where: { id: globalThis.userIN, type: "movie" }
-      where: { id: globalThis.userIN },
+      //where: { id: globalThis.userIN, type: "data" }
+      where: { user_id: globalThis.userIN, type: "movie" },
     });
     console.log(movies);
     console.log("hii3");
     //   id: globalThis.userIN
     // });
-    //console.log(movies[0].type); calismiyo
+    //console.log(datas[0].type); calismiyo
 
     res.status(200).render("movies", {
       movies,
-      //page_name: "movies",
+      //page_name: "datas",
     });
   } catch {
     res.status(400).json({
@@ -141,21 +198,25 @@ export const getAllMovies: RequestHandler = async (req, res) => {
   }
 };
 
-export const deleteMovie: RequestHandler = async (req, res) => {
+export const getAllActors: RequestHandler = async (req, res) => {
   try {
-    // const repository = getManager().getRepository(Movie);
-    // const movies = await repository.find();
-
-    // res.status(200).render("movies", {
-    //   movies,
-    //   //page_name: "movies",
+    const repository = getManager().getRepository(Data);
+    // const datas = await repository.find({
+    //   id: globalThis.userIN
     // });
-    const repository = getManager().getRepository(Movie);
-    const movie = await repository.findOne(req.params.id);
-    console.log(req.params.id);
-    await repository.delete(movie);
-    console.log("sildimi");
-    res.redirect("/users/movies");
+    const actors = await repository.find({
+      //where: { id: globalThis.userIN, type: "data" }
+      where: { user_id: globalThis.userIN, type: "actor" },
+    });
+    console.log(actors);
+    //   id: globalThis.userIN
+    // });
+    //console.log(datas[0].type); calismiyo
+
+    res.status(200).render("actors", {
+      actors,
+      //page_name: "datas",
+    });
   } catch {
     res.status(400).json({
       status: "fail",
@@ -164,12 +225,35 @@ export const deleteMovie: RequestHandler = async (req, res) => {
   }
 };
 
-export const getMovie: RequestHandler = async (req, res) => {
+export const deleteData: RequestHandler = async (req, res) => {
   try {
-    const repository = getManager().getRepository(Movie);
-    const movie = await repository.findOne(req.params.id);
-    res.render("movie", {
-      movie,
+    // const repository = getManager().getRepository(Data);
+    // const datas = await repository.find();
+
+    // res.status(200).render("datas", {
+    //   datas,
+    //   //page_name: "datas",
+    // });
+    const repository = getManager().getRepository(Data);
+    const data = await repository.findOne(req.params.id);
+    console.log(req.params.id);
+    await repository.delete(data);
+    console.log("sildimi");
+    res.redirect("/users/" + `${data.type}` + "s");
+  } catch {
+    res.status(400).json({
+      status: "fail",
+      Error,
+    });
+  }
+};
+
+export const getData: RequestHandler = async (req, res) => {
+  try {
+    const repository = getManager().getRepository(Data);
+    const data = await repository.findOne(req.params.id);
+    res.render("data", {
+      data,
     });
   } catch {
     res.status(400).json({
@@ -179,22 +263,24 @@ export const getMovie: RequestHandler = async (req, res) => {
   }
 };
 
-export const updateMovie: RequestHandler = async (req, res) => {
+export const updateData: RequestHandler = async (req, res) => {
   //const { name, description } = await req.body;
   console.log("updategeldi");
   try {
-    const repository = getManager().getRepository(Movie);
-    const movie = await repository.findOne(req.params.id);
+    const repository = getManager().getRepository(Data);
+    const data = await repository.findOne(req.params.id);
 
-    movie.name = req.body.name;
-    movie.description = req.body.description;
+    data.name = req.body.name;
+    data.description = req.body.description;
     console.log(req.body.name, req.body.description);
-    await repository.save(movie);
-    // res.render("movie", {
-    //   movie,
+    await repository.save(data);
+    // res.render("data", {
+    //   data,
     // });
 
-    res.redirect("/users/movies");
+    //res.redirect("/users/movies");
+    //console.log(`${data.type}`);
+    res.redirect("/users/" + `${data.type}` + "s");
   } catch {
     res.status(400).json({
       status: "fail",
@@ -204,9 +290,9 @@ export const updateMovie: RequestHandler = async (req, res) => {
 };
 
 export const getEditPage: RequestHandler = async (req, res) => {
-  const repository = getManager().getRepository(Movie);
-  const movie = await repository.findOne(req.params.id);
+  const repository = getManager().getRepository(Data);
+  const data = await repository.findOne(req.params.id);
   res.status(200).render("edit", {
-    movie,
+    data,
   });
 };
