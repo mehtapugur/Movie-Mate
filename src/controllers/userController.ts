@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { User } from "../entity/user.entity";
 import { Data } from "../entity/data.entity";
 import { Shared } from "../entity/shared.entity";
-import { getManager } from "typeorm";
+import { getManager, getConnection } from "typeorm";
 import { RequestHandler } from "express";
 import session from "express-session";
 
@@ -72,7 +72,9 @@ export const getDashboardPage: RequestHandler = async (req, res) => {
   //const users = await User.find();
   console.log(req.session.userID);
   const repository = getManager().getRepository(Shared);
-  const shared = await repository.find();
+  const shared = await repository.find({
+    order: { sharedAt: "ASC" },
+  });
   res.status(200).render("dashboard", {
     shared,
   });
@@ -123,23 +125,14 @@ export const shareData: RequestHandler = async (req, res) => {
   const repository = await getManager().getRepository(Data);
 
   const data = await repository.findOne(req.params.id);
+  data.share = true;
+  await repository.save(data);
   console.log(req.params.id);
   console.log(data);
   const sharedRepository = await getManager().getRepository(Shared);
   await sharedRepository.save(data);
-  // const data = await repository.save({
-  //   type: "movie",
-  //   user_id: globalThis.userIN,
-  // });
-  // const movies = await repository.find({
-  //   where: { user_id: globalThis.userIN, type: "movie" },
-  // });
-  const shared = await sharedRepository.find();
   try {
-    res.status(200).render("dashboard", {
-      shared,
-      //page_name: "datas",
-    });
+    res.redirect("/users/dashboard");
   } catch {
     res.status(400).json({
       status: "fail",
@@ -257,17 +250,26 @@ export const getAllActors: RequestHandler = async (req, res) => {
 
 export const deleteData: RequestHandler = async (req, res) => {
   try {
-    // const repository = getManager().getRepository(Data);
-    // const datas = await repository.find();
-
-    // res.status(200).render("datas", {
-    //   datas,
-    //   //page_name: "datas",
-    // });
     const repository = getManager().getRepository(Data);
     const data = await repository.findOne(req.params.id);
     console.log(req.params.id);
     await repository.delete(data);
+    console.log("sildim");
+    // const sharedRepository = await getManager().getRepository(Shared);
+    // console.log("silsil");
+    // const sharedData = await sharedRepository.findOne(req.params.id);
+    // console.log(sharedData);
+    // await sharedRepository.delete(sharedData);
+    if (data.share === true) {
+      console.log("paylasilmis");
+      await getConnection()
+        .createQueryBuilder()
+        .delete()
+        .from(Shared)
+        .where({ id: req.params.id })
+        .execute();
+    }
+
     console.log("sildimi");
     res.redirect("/users/" + `${data.type}` + "s");
   } catch {
@@ -304,12 +306,14 @@ export const updateData: RequestHandler = async (req, res) => {
     data.description = req.body.description;
     console.log(req.body.name, req.body.description);
     await repository.save(data);
-    // res.render("data", {
-    //   data,
-    // });
-
-    //res.redirect("/users/movies");
-    //console.log(`${data.type}`);
+    if (data.share === true) {
+      await getConnection()
+        .createQueryBuilder()
+        .update(Shared)
+        .set({ name: req.body.name, description: req.body.description })
+        .where({ id: req.params.id })
+        .execute();
+    }
     res.redirect("/users/" + `${data.type}` + "s");
   } catch {
     res.status(400).json({
