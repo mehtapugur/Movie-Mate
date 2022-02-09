@@ -30,9 +30,10 @@
                       </td>
                       <td class="table-row__td">
                         <div class="table-row__info">
-                          <div id= <%= shared[i].id %>
-                            class="text-center begen-button btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download">
-                            <span>beğen
+                          <div id=<%=shared[i].id %>
+                            class="text-center begen-button btn btn-danger p-0 tm-btn-animate tm-btn-download
+                            tm-icon-download">
+                            <span>beğen(<%= shared[i].likes %>)
                             </span>
                           </div>
                         </div>
