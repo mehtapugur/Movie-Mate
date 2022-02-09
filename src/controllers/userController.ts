@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { User } from "../entity/user.entity";
 import { Data } from "../entity/data.entity";
+import { Shared } from "../entity/shared.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
 import session from "express-session";
@@ -70,10 +71,10 @@ export const loginUser: RequestHandler = async (req, res) => {
 export const getDashboardPage: RequestHandler = async (req, res) => {
   //const users = await User.find();
   console.log(req.session.userID);
-  const repository = getManager().getRepository(User);
-  const users = await repository.find();
+  const repository = getManager().getRepository(Shared);
+  const shared = await repository.find();
   res.status(200).render("dashboard", {
-    users,
+    shared,
   });
 };
 
@@ -110,6 +111,35 @@ export const createData: RequestHandler = async (req, res) => {
       //page_name: "datas",
     });
     //res.status(201).redirect("/users/datas");
+  } catch {
+    res.status(400).json({
+      status: "fail",
+      Error,
+    });
+  }
+};
+
+export const shareData: RequestHandler = async (req, res) => {
+  const repository = await getManager().getRepository(Data);
+
+  const data = await repository.findOne(req.params.id);
+  console.log(req.params.id);
+  console.log(data);
+  const sharedRepository = await getManager().getRepository(Shared);
+  await sharedRepository.save(data);
+  // const data = await repository.save({
+  //   type: "movie",
+  //   user_id: globalThis.userIN,
+  // });
+  // const movies = await repository.find({
+  //   where: { user_id: globalThis.userIN, type: "movie" },
+  // });
+  const shared = await sharedRepository.find();
+  try {
+    res.status(200).render("dashboard", {
+      shared,
+      //page_name: "datas",
+    });
   } catch {
     res.status(400).json({
       status: "fail",
