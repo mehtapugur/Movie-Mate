@@ -14,4 +14,12 @@
   - movies ve actors sayfalarını ayır
   - dashboard listele
   - jquery ekledim
+
+### 9th
+
+  - Data tablosundan silinen veya güncellenen verinin, önceden paylaşılmış olması halinde akışta da güncellenmesi sağlandı.
+  - Like entity si ve mysql tablosu oluşturuldu.
+  - Gönderiyi beğenen kullanıcının butona tekrar tıkladığında beğeninin geri alınması sağlandı.
+  - Like - Dislike özelliklerinin veritabanı işlemleri tamamlandı.
+  - 
  
