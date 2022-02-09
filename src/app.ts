@@ -5,9 +5,13 @@ import bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 import { User } from "./entity/user.entity";
 import { Data } from "./entity/data.entity";
+import { Shared } from "./entity/shared.entity";
 import { getManager } from "typeorm";
 import { RequestHandler } from "express";
 const methodOverride = require("method-override");
+//import $ from "jquery";
+import jsdom from "jsdom";
+const $ = require("jquery")(new jsdom.JSDOM().window);
 import path from "path";
 import bcrypt from "bcrypt";
 import jwt, { VerifyErrors } from "jsonwebtoken";
@@ -73,7 +77,7 @@ createConnection({
   username: "root",
   password: "root",
   database: "node_auth",
-  entities: [User, Data],
+  entities: [User, Data, Shared],
   synchronize: false,
   logging: false,
 });
@@ -151,6 +155,8 @@ passport.deserializeUser((obj, cb) => {
   cb(null, obj);
 });
 
+//$.ajax().then().catch().finnally();
+
 // //check user
 // app.use(userControl);
 
@@ -172,6 +178,15 @@ app.use("/users", userRoute);
 
 // app.listen(3000, HOST, () => {
 //   console.log(`Server is listening ${HOST}:3000`);
+// });
+
+// $(function () {
+//   $(".begen-button").on("click", function () {
+//     console.log("begendi");
+//     // $.ajax({
+
+//     // })
+//   });
 // });
 
 app.listen(process.env.PORT || 3000, () => {
