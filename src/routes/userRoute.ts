@@ -86,7 +86,7 @@ router.get("/actors", getAllActors);
 router.get("/datas/:id", getData);
 router.delete("/datas/:id", deleteData);
 router.get("/datas/edit/:id", getEditPage);
-router.get("/movies/share/:id", shareData);
+router.get("/share/:id", shareData);
 router.put("/datas/:id", updateData);
 
 const userRouter = router;
