@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row row--top-40">
           <div class="col-md-12">
-            <h2 class="row__title">Members (<%= users.length %>)</h2>
+            <h2 class="row__title">Dashboard (<%= shared.length %>)</h2>
           </div>
         </div>
         <div class="row row--top-20">
@@ -14,25 +14,35 @@
                 <thead class="table__thead">
                   <opttr>
                     <th class="table__th">Name</th>
-                    <th class="table__th">Email</th>
+                    <th class="table__th">Description</th>
                   </opttr>
                 </thead>
                 <tbody class="table__tbody">
-                  <% for(let i=0; i < users.length; i++) { %>
+                  <% for(let i=(shared.length-1); i>= 0; i--) { %>
                     <tr class="table-row">
                       <td class="table-row__td">
                         <div class="table-row__info">
                           <p class="table-row__name">
-                            <%= users[i].name %>
-                              <%= users[i].surname %>
+                            <%= shared[i].name %>
+                              <%= shared[i].description %>
                           </p>
                         </div>
                       </td>
-                      <td data-column="Email" class="table-row__td">
-                        <p class="table-row__p-email">
-                          <%= users[i].email %>
-                        </p>
-                      </td>
+                      <td class="table-row__td">
+                        <div class="table-row__info">
+                          <div id= <%= shared[i].id %>
+                            class="text-center begen-button btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download">
+                            <span>beğen
+                            </span>
+                          </div>
+                        </div>
+                        <div class="table-row__info">
+                          <div class="text-center">
+                            <a href="" class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"
+                              onclick="return confirm('Are you sure?')"><span>yorum
+                              </span></a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                     <% } %>
@@ -43,4 +53,63 @@
         </div>
       </div>
   </div>
+  <script>
+    // $(function () {
+    //   $(".begen-button").click(function () {
+    //     console.log("begendi");
+    //     $(".begen-button").html("begendi");
+    //     // $.ajax({
+
+    //     // })
+    //   })
+    // });
+
+    // function setVideoSize() {
+    //   const vidWidth = 1920;
+    //   const vidHeight = 1080;
+    //   let windowWidth = window.innerWidth;
+    //   let newVidWidth = windowWidth;
+    //   let newVidHeight = windowWidth * vidHeight / vidWidth;
+    //   let marginLeft = 0;
+    //   let marginTop = 0;
+    //   if (newVidHeight < 500) {
+    //     newVidHeight = 500;
+    //     newVidWidth = newVidHeight * vidWidth / vidHeight;
+    //   }
+    //   if (newVidWidth > windowWidth) {
+    //     marginLeft = -((newVidWidth - windowWidth) / 2);
+    //   }
+    //   if (newVidHeight > 720) {
+    //     marginTop = -((newVidHeight - $('#tm-video-container').height()) / 2);
+    //   }
+    //   const tmVideo = $('#tm-video');
+    //   tmVideo.css('width', newVidWidth);
+    //   tmVideo.css('height', newVidHeight);
+    //   tmVideo.css('margin-left', marginLeft);
+    //   tmVideo.css('margin-top', marginTop);
+    // }
+    // $(document).ready(function () {
+    //   /************** Video background *********/
+    //   setVideoSize();
+    //   // Set video background size based on window size
+    //   let timeout;
+    //   window.onresize = function () {
+    //     clearTimeout(timeout);
+    //     timeout = setTimeout(setVideoSize, 100);
+    //   };
+    //   // Play/Pause button for video background      
+    //   const btn = $("#tm-video-control-button");
+    //   btn.on("click", function (e) {
+    //     const video = document.getElementById("tm-video");
+    //     $(this).removeClass();
+    //     if (video.paused) {
+    //       video.play();
+    //       $(this).addClass("fas fa-pause");
+    //     } else {
+    //       video.pause();
+    //       $(this).addClass("fas fa-play");
+    //     }
+    //   });
+    // })
+  </script>
   <%- include("partials/_footer"); %>
