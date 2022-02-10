@@ -1,0 +1,317 @@
+@import url("https://db.onlinewebfonts.com/c/0abeb2471faeb5269db428b9eac2075e?family=GT+Walsheim+Pro+Regular");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: box-border;
+  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  /* background: #e9e5c4; /* #f4f4f4;*/
+  /* background-image: url("images/my.jpeg");*/
+  background-color: rgba(247, 233, 142, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: white;*/
+  height: 85%;
+  margin: auto;
+  border: 2px solid #ebc700;
+  border-radius: 4px;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  height: 90%;
+  position: relative;
+  /* top: 50%;
+  left: 50%;
+  margin-top: -275px;
+  margin-left: -165px; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*  background-color: #064635;
+  background: linear-gradient(45deg, #e1e1c4 0, rgba(255, 234, 112, 0.8) 100%);*/
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
+  color: black;
+  max-width: 17rem;
+  padding: 1.2rem;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 233, 142, 0.8) 0,
+    rgba(255, 234, 112, 0.8) 100%
+  );
+}
+
+.welcome-section h2 {
+  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.welcome-section h4 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+.login-separator {
+  height: 0px;
+  width: 100px;
+  margin: 24px 0px;
+  border-radius: 8px;
+  border: 4px solid #ebc700;
+  align-self: flex-start;
+}
+
+.login-container .form-div {
+  padding: 2rem;
+}
+
+.container {
+  /* width: 330px;
+  height: 550px; 
+  margin-left: 1.3rem;*/
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 28rem;
+  position: relative;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  /* top: 50%;
+  left: 50%;
+  margin-top: -275px;
+  margin-left: -165px; */
+  text-align: center;
+  background-color: #e1e1c4; /* #2f4f4f;*/
+
+  /*border: 1px solid red; */
+}
+
+.container div {
+  height: 40px;
+}
+
+.facebook svg,
+.google svg {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  fill: none;
+}
+
+.facebook,
+.google {
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  width: 20.55rem; /*329px;
+  /* height: 36px;*/
+  line-height: 40px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.facebook a:hover,
+.google a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+.name {
+  /* display: flex;
+  justify-content: space-between; */
+  margin-top: 0.5rem;
+}
+.name input {
+  width: 10.1rem;
+  height: 40px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(0, 0, 0, 0.3);
+  font-size: 90%;
+  padding-left: 10px;
+  /* margin-right: 8px;*/
+  margin-bottom: 10px;
+}
+
+.login-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form div {
+  margin-bottom: 1rem;
+}
+
+.login-inner input {
+  width: 20.55rem; /*317px;*/
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(0, 0, 0, 0.3);
+  font-size: 90%;
+  padding-left: 10px;
+}
+
+.inner-login input {
+  margin-bottom: 0.9rem;
+}
+
+.pasw {
+  width: 20.55rem;
+  display: flex;
+  line-height: 12px;
+  color: rgb(57, 70, 73);
+  font-size: 12px;
+}
+
+.seperator {
+  width: 20.5rem;
+  border-top: 1px solid rgb(0, 35, 51);
+  height: 1px;
+  margin: 20px 0px;
+}
+
+.seperator p {
+  background: #fdfae8;
+  color: rgb(0, 35, 51);
+  /*  display: block; */
+  margin: -7px auto;
+  text-align: center;
+  width: 35px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.login-form .seperator {
+  margin: 1.6rem 0;
+}
+
+.signup {
+  /*
+  height: 40px;
+  width: 20.5rem;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #00ff84;
+  border-radius: 5px;
+  */
+  margin-top: 0.9rem;
+}
+
+.signup button,
+.login-button {
+  width: 20.5rem;
+  height: 40px;
+  border: none;
+  /*background: #e1e1c4; /* #cfcba5;  #00ff84;
+  background: linear-gradient(90deg, #ffe44d 0, #ebc700 100%); */
+  background: linear-gradient(
+    90deg,
+    rgba(247, 233, 142, 0.8) 0,
+    rgba(255, 234, 112, 0.8) 100%
+  );
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.login-button {
+  margin-top: -0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.sign-in {
+  line-height: 16px;
+  color: rgb(57, 70, 73);
+  font-size: 15px;
+  margin-top: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.sign-in a {
+  font-weight: bold;
+  color: rgb(55, 34, 211);
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.pr {
+  width: 21rem;
+  color: rgb(57, 70, 73);
+  font-size: 12px;
+  /*font-weight: bold;*/
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-top: 0.2rem;
+}
+
+.pr a {
+  font-weight: bold;
+}
+
+.pr a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+::selection {
+  background: rgba(247, 233, 142, 0.8);
+}
+
+.hov:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.signup button:hover,
+.login-button:hover {
+  background-color: #ebc700;
+}
+
+.sign-up {
+  color: var(--color-black-light);
+}
+
+.sign-up a {
+  font-weight: bold;
+  color: rgb(55, 34, 211);
+  text-decoration: underline;
+  margin-left: 5px;
+}
