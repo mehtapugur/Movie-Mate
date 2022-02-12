@@ -21,5 +21,11 @@
   - Like entity si ve mysql tablosu oluşturuldu.
   - Gönderiyi beğenen kullanıcının butona tekrar tıkladığında beğeninin geri alınması sağlandı.
   - Like - Dislike özelliklerinin veritabanı işlemleri tamamlandı.
-  - 
+
+### 12nd
+
+  - commnet section yapıldı
+  - begeni butonu ile veritabanı arasındaki ilişkisindeki hata düzeltildi
+  - paylaşımlara özel sayfa oluşturuldu
+  
  
