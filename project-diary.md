@@ -27,5 +27,9 @@
   - commnet section yapıldı
   - begeni butonu ile veritabanı arasındaki ilişkisindeki hata düzeltildi
   - paylaşımlara özel sayfa oluşturuldu
+
+### 13th
   
+  - Home sayfasının stilleri tamamlandı.
+  - -
  
