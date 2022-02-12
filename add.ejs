@@ -1,0 +1,78 @@
+<%- include("partials/_header"); %>
+  <div class="home-container">
+    <%- include("partials/_navigation"); %>
+      <div class="container">
+        <div class="row row--top-40">
+          <div class="col-md-10 offset-1">
+            <h2 class="row__title">
+              <% if(data.type=="movie" ) { %>
+                <i class="fa-solid fa-clapperboard fa-lg"></i>
+                <% } else if(data.type=="actor" ) { %>
+                  <i class="fa-solid fa-user"></i>
+                  <% } %>
+            </h2>
+          </div>
+        </div>
+        <div class="row row--top-20">
+          <div class="col-md-10 offset-1">
+            <div class="table-container">
+              <div class="table-row__info">
+                <p class="">
+                  <a href="/users/datas/<%=  %>" class="">
+                    <b>
+                      <%= data.name %>
+                        &nbsp;&nbsp;
+                    </b>
+                  </a>
+                  <span>&#8226; <%= data.type %> </span>
+                </p>
+                <p class="">
+                  <%= data.description %>
+                </p>
+                <div class="icons">
+                  <a href="/users/likes/<%= data.id %>?_method=PUT">
+                    <span class="fa-stack small" style="font-size: 1rem;">
+                      <span class="fa-regular fa-heart fa-stack-2x" style="color:#d8d18f;"></span>
+                      <strong class="fa-stack-1x" style="color:#d8d18f; font-size: 78%">
+                        <%= shared.likes %>
+                      </strong>
+                    </span>
+                  </a>
+                  <div>
+                    <span class="fa-stack small" style="font-size: 1rem;">
+                      <span class="far fa-comment fa-stack-2x" style="color:#d8d18f;"></span>
+                      <strong class="fa-stack-1x" style="color:#d8d18f; font-size: 78%">
+                        <%= shared.comments %>
+                      </strong>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% if(shared.comments> 0) { %>
+              <% for(let i=0; i< shared.comments; i++) { %>
+                <div>
+                  <%= comments[i].comments %>
+                </div>
+                <% } %>
+                  <% } %>
+                    <div class="col-lg-10 offset-1 mb-5">
+                      <form method="post" action="/users/comments/<%= data.id%>?_method=PUT" class="tm-contact-form">
+                        <div class="form-group">
+                          <textarea rows="3" type="comments" name="comments" id="comments"
+                            class="form-control rounded-0" placeholder="Comments (max .. character)"
+                            required></textarea>
+                        </div>
+                        <div class="form-group mb-0">
+                          <button type="submit" id="submit"
+                            class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Reply&nbsp;<i
+                                class="fa-solid fa-reply"></i>
+                            </span></button>
+                        </div>
+                      </form>
+                    </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%- include("partials/_footer"); %>
