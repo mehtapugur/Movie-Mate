@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#calling-about" style="color:#d8d18f;">About</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#calling-about" style="text-color:#d8d18f;">About</a>&nbsp;&nbsp;|&nbsp;
   <a href="#gear-technologies" style="color:#cfcba5;">Technologies</a>&nbsp;&nbsp;|&nbsp;
   <a href="#sparkles-main-features" style="color:#e1e1c4;">Features</a>&nbsp;&nbsp;|&nbsp;
   <a href="#camera_flash-screenshots" style="color:#e1e1c4;">Screenshots</a>&nbsp;&nbsp;|&nbsp;
