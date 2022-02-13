@@ -118,20 +118,20 @@ CSS and Bootstrap were used for styling.
 | --- | --- | 
 | ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="500px"> |
 
+| Edit | Post Page | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="720px"> |
 
 | Edit | Post Page | 
 | --- | --- | 
 | ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="400px"> |
 
-  - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
-  - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
-  - The cargo location with "true" send information is deleted from the map, the marker is deleted.
-  - Users can delete the cargoes by pressing the **X** button.
-  - Users can **Save** cargo with the latitude and longitude values they type.
-  - Users can open the Map page with the **Open Map** button.
-  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
+  - All content is displayed on posts specific pages.
+  - Users can comment on the post and the comments are displayed in order.
+  - Next to the comment is the author of the comment.<br/><br/>
 
-| Firebase Realtime Database | 
+| MySQL Database | 
 | --- | 
 | <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
 
@@ -139,6 +139,24 @@ CSS and Bootstrap were used for styling.
   - There are **users** and **locations**.
   - A key is created for each location under **locations**.
   - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
+
+| JWT | 
+| --- | 
+| <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
+
+  - A **key** is generated for each user.
+  - There are **users** and **locations**.
+  - A key is created for each location under **locations**.
+  - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
+
+| Google Auth | Facebook Auth | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="400px"> |
+
+  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
+  - All content is displayed on posts specific pages.
+  - Users can comment on the post and the comments are displayed in order.
+  - Next to the comment is the author of the comment.<br/><br/>
 
 
 
