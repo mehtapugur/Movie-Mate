@@ -10,23 +10,13 @@
   <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;|&nbsp;
   <a href="#memo-license">License</a>
 </p>
-<p>.................</p>
-<p align="center">
-  <a href="#calling-about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#camera_flash-screenshots">Database</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#memo-license">License</a>&nbsp;&nbsp;
-</p>
-
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/24686636/153736179-fd34a29e-b994-4f8e-9233-4eead35bd720.png" alt="title" />
+</div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/24686636/153765773-23271b47-8464-4985-b0e9-4d1e2181667b.png" alt="title" />
 </div>
 
 ## :calling: About
