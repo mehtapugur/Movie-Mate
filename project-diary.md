@@ -31,5 +31,10 @@
 ### 13th
   
   - Home sayfasının stilleri tamamlandı.
-  - -
+  - Dashboard sayfasının stilleri tamamlandı.
+  - Movies
+  - Actors
+  - Edit
+  - Add actors
+  - Add movies
  
