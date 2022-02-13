@@ -1,14 +1,19 @@
 <p align="center">
-  <a href="#calling-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer-setup">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#rocket-project-history">History</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
-  <a href="#memo-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#calling-about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#camera_flash-screenshots">Database</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
+  <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#memo-license">License</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 </p>
+
+:ballot_box:
+:toolbox:
+:ice_cube:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/24686636/153736179-fd34a29e-b994-4f8e-9233-4eead35bd720.png" alt="title" />
@@ -107,7 +112,7 @@ CSS and Bootstrap were used for styling.
    
 ## :file_folder: Project Folder Structure
     
-    Cargo-Delivery-System
+    Movie Mate
     .
     │
     ├── src
@@ -143,10 +148,18 @@ CSS and Bootstrap were used for styling.
 <a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period in Turkish. You can read if you want.<br/><br/>
 
 ## :movie_camera: Project Video
-  - video
-
+  - video  
+  
 ## :memo: License
 This project is under the terms of the MIT license.
 <br/>
 <br/>
 Contact: [LinkedIn](https://www.linkedin.com/in/mehtapugur)
+  
+```js
+/**
+ * Gusto & RemoteTeam Node.js Bootcamp
+ * Final Project
+ * Mehtap Ugur
+ */  
+```
