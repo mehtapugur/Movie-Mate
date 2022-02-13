@@ -116,7 +116,7 @@ CSS and Bootstrap were used for styling.
 
 | Edit | Post Page | 
 | --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t"> |
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif"> |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
