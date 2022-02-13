@@ -37,4 +37,31 @@
   - Edit
   - Add actors
   - Add movies
+
+### karışık
+  - Proje için gerekli kurulumlar yapıldı.
+  - MySQL bağlantısı sağlandı.
+  - tsconfig.json dosyası için gerekli ayarlar yapıldı.
+  - Veritabanına User ve Data tabloları eklendi.
+  - Gereksiz yorum satırları silindi.
+  - .env dosyasına gerekli değişkenler eklendi.
+  - Projeyi daha anlaşılır kılmak için eklenen yorum satırları düzenlendi.
+  - Web uygulamasının açılış sayfası için background tasarlandı ve bu sayfa için gerekli stil işlemleri yapıldı.
+  - Sign-Up sayfasının tasarımı yapıldı.
+  - Sign-Up sayfasının tasarımı geliştirildi.
+  - Login sayfasının tasarımı yapıldı.
+  - Login sayfasının tasarımı geliştirildi.
+  - Aktör ve film ekleme alanlarında boş ifade gönderilmesi engellendi.
+  - Template EJS yapısı oluşturuldu ve kullanılmaya başlandı.
+  - Kullanılan template dosyası projeye uyarlandı.
+  - Kullanının girdiği şifrenin veritabanına şifrelenerek kaydedilmesi için Bcrypt modülü projeye dahil edildi.
+  - Post ve Get istekleri için method override işlemi yapıldı.
+  - Giriş yapmış kullanıcıların Login ve Signup sayfalarına gitmesi engellendi.
+  - Film veya aktör ekleme, silme, güncelleme, paylaşılanalrı ve her bir paylaşımı ayrı ayrı görüntüleme işlemi için auth kontrolü yapıldı.
+  - Kullanıcının, form alanlarına izin verilen karakter boyutundan daha fazlasını girmesi engellendi.
+
+  - Veritabanına Shared ve Likes tabloları eklendi.
+  - Veritabanına Comments tablosu eklendi.
+  - Tüm tabloların string tipindeki sütunlarının maximum karakter uzunluğu artırıldı.
+  - Projeye readme dosyası eklendi.
  
