@@ -12,10 +12,6 @@
 </p>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/24686636/153736179-fd34a29e-b994-4f8e-9233-4eead35bd720.png" alt="title" />
-</div>
-
-<div align="center">
   <img src="https://user-images.githubusercontent.com/24686636/153765773-23271b47-8464-4985-b0e9-4d1e2181667b.png" alt="title" />
 </div>
 
@@ -85,13 +81,19 @@ CSS and Bootstrap were used for styling.
   - The person who shared the post is shown at the bottom right.
   - **Note**: The first 200 characters of the descriptions of the posts are displayed on the Dashboard page.<br/><br/>
 
-| Cargo | Logout | 
+| Movies | Actors | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139920166-1bac2ecd-4526-49e8-a8d6-3d74a50a01bc.png) | ![Preview](https://media.giphy.com/media/0BdQhGuevErtCfVVJ3/giphy.gif) |
+| ![movies](https://user-images.githubusercontent.com/24686636/153766617-e2966505-e641-4d87-825f-a98d89be5bd2.png) | ![actor](https://user-images.githubusercontent.com/24686636/153766651-e87a5c32-0481-4110-adbc-b386f8e9c668.png) |
 
-  - Users can go to the **Address Page** with the address button.
-  - Users can go to the **Status Page** with the status button.
+  - Users can go to the **Movies** page with the movies button.
+  - Users can go to the **Actors** page with the actors button.
   - Users can log out by pressing the **Logout** button.<br/><br/>
+  - Users can go to the **Dashboard** page by clicking the **Movie Mate (M)** icon.
+  - Favorite movies and actors saved by users are listed on these pages.
+  - Users can delete posts they have saved. If the deleted post has been shared before, it will be removed from the Dashboard page.
+  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
+  - Users can share their saved posts. The same post cannot be shared more than once.
+  - These pages also show the number of the user's favorite movies or actors.
 
 | Address | Map | 
 | --- | --- | 
