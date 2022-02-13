@@ -8,12 +8,8 @@
   <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#memo-license">License</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#memo-license">License</a>&nbsp;&nbsp;
 </p>
-
-:ballot_box:
-:toolbox:
-:ice_cube:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/24686636/153736179-fd34a29e-b994-4f8e-9233-4eead35bd720.png" alt="title" />
@@ -48,26 +44,42 @@ CSS and Bootstrap were used for styling.
 
 ## :sparkles: Main Features
 
-  - Cargo information is kept in Firebase and updated dynamically.
+  - Data informations were kept in MySQL database and updated dynamically.
   - Users must register to use the application.
-  - Cargoes in the database are listed.
-  - Users can change the status of cargoes and delete them.
-  - Cargo locations are shown on the map.
-  - The markers of the cargoes with a "true" send value are deleted from the map.
-  - Users can save a cargo address to the database by clicking on the map. A marker is created at the clicked place on the map.
-  - The shortest path is drawn for the first two cargo locations in the database.
+  - The data in the Shared table is listed on the Dashboard page.
+  - Users can change and delete the information of the post they have saved.
+  - The user cannot share the same post twice.
+  - If the user makes a change to the post they shared, this change will also be shown on the Dashboard page.
+  - The user cannot register more than once with the same email.
+  - The post that the user deleted is also deleted on the Dashboard page if it has been shared before.
+  - Movies and actors saved by the user are displayed on the user-specific Movies and Actors pages.
+  - Users can delete, update, share the movie or player they recorded.
+  - Users can like and comment on shared posts.
+  - The same user cannot like a post more than once, but can comment more than once.
 
 ## :camera_flash: Screenshots
 
-| Home | 
+| Movie Mate | 
 | --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
+| ![main](https://user-images.githubusercontent.com/24686636/153762096-d3cbc4a8-d0cf-475c-a47b-4f4d2a30c73c.png) |
 
   - The application has home page for login.
-  - Users can register to the application with **Signup** button.
-  - Registered users can login to the application with **Login** button.
-  - When the users logs in, they will see the **Cargo** page with address, status and logout options.
-  - **Note**: Password must be at least 8 characters.<br/><br/>
+  - Users can register to the application with **signup** button.
+  - Registered users can login to the application with **login** button.
+  - When users log in, they will see the **Dashboard** page with shared posts.<br/><br/>
+
+| Dashboard | 
+| --- | 
+| ![dashboard](https://user-images.githubusercontent.com/24686636/153763067-5ee4b3cc-d2a9-4be8-afff-7146e4fbc20b.png) |
+
+  - It is the first page the user sees after logging in.
+  - Posts shared by users are listed here, with the most recent post at the top.
+  - The information that the user who presses the like button likes the post is saved and directed to the post page.
+  - The user who presses the comment button is directed to the post page.
+  - Information that the added post is a movie or an actor is displayed next to the post's name.
+  - When users click on the post name, they are directed to the post specific page.
+  - The person who shared the post is shown at the bottom right.
+  - **Note**: The first 200 characters of the descriptions of the posts are displayed on the Dashboard page.<br/><br/>
 
 | Cargo | Logout | 
 | --- | --- | 
@@ -106,6 +118,12 @@ CSS and Bootstrap were used for styling.
   - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
 
 
+
+| <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
+  - **Note**: Password must be at least 8 characters.
+  
+  
+  
 ## :computer: Setup
   
   - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. <br/><br/>
@@ -155,6 +173,11 @@ This project is under the terms of the MIT license.
 <br/>
 <br/>
 Contact: [LinkedIn](https://www.linkedin.com/in/mehtapugur)
+  
+  :ballot_box:
+:toolbox:
+:ice_cube:
+
   
 ```js
 /**
