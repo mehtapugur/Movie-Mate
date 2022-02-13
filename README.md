@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="#calling-about" style="text-color:#d8d18f;">About</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#gear-technologies" style="color:#cfcba5;">Technologies</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#sparkles-main-features" style="color:#e1e1c4;">Features</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#camera_flash-screenshots" style="color:#e1e1c4;">Screenshots</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#camera_flash-screenshots" style="color:rgba(216, 209, 143, 0.7);">Database</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#calling-about">About</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#camera_flash-screenshots">Database</a>&nbsp;&nbsp;|&nbsp;
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;
   <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;
@@ -68,6 +68,18 @@ CSS and Bootstrap were used for styling.
   - Registered users can login to the application with **login** button.
   - When users log in, they will see the **Dashboard** page with shared posts.<br/><br/>
 
+| Login | Signup | 
+| --- | --- | 
+| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="720px"> |
+
+  - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
+  - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
+  - The cargo location with "true" send information is deleted from the map, the marker is deleted.
+  - Users can delete the cargoes by pressing the **X** button.
+  - Users can **Save** cargo with the latitude and longitude values they type.
+  - Users can open the Map page with the **Open Map** button.
+  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+
 | Dashboard | 
 | --- | 
 | ![dashboard](https://user-images.githubusercontent.com/24686636/153763067-5ee4b3cc-d2a9-4be8-afff-7146e4fbc20b.png) |
@@ -95,16 +107,16 @@ CSS and Bootstrap were used for styling.
   - Users can share their saved posts. The same post cannot be shared more than once.
   - These pages also show the number of the user's favorite movies or actors.<br/><br/>
 
-| Address | Map | 
+| Add Movie | Add Actor | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139924222-8ce09c47-771f-442b-9c70-ecdbd9ecca48.png) | ![Preview](https://media.giphy.com/media/TuFP8wtAsy8qo4YoKN/giphy.gif) |
+| ![adda](https://user-images.githubusercontent.com/24686636/153768057-beb1919a-bb03-4671-961e-d242ecdf207d.png) | ![addm](https://user-images.githubusercontent.com/24686636/153768075-fd0f3540-636b-483e-87bb-cbfea00090ae.png) |
 
-  - The latitude and longitude information of the cargoes in the database are listed on the **Address Page**.
-  - Users can open the Map page with the **Open Map** button.<br/><br/>
+  - Users can add their favorite movies and actors through these pages.
+  - The **name** must be a maximum of `50 characters` and the **description** a maximum of `500 characters`.<br/><br/>
 
-| Status | Map | 
+| Edit | Post Page | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="720px"> |
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t" width="720px"> |
 
   - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
   - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
@@ -127,7 +139,7 @@ CSS and Bootstrap were used for styling.
 
 | <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
   - **Note**: Password must be at least 8 characters.
-  
+  <iframe src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FWjjbwWzoEE3G29L0t">via GIPHY</a></p>
   
   
 ## :computer: Setup
