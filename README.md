@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="#calling-about">About</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#camera_flash-screenshots">Database</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#calling-about" style="color:#d8d18f;">About</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#gear-technologies" style="color:#cfcba5;">Technologies</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#sparkles-main-features" style="color:#e1e1c4;">Features</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#camera_flash-screenshots" style="color:#e1e1c4;">Screenshots</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#camera_flash-screenshots" style="color:rgba(216, 209, 143, 0.7);">Database</a>&nbsp;&nbsp;|&nbsp;
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;
   <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;
@@ -87,13 +87,13 @@ CSS and Bootstrap were used for styling.
 
   - Users can go to the **Movies** page with the movies button.
   - Users can go to the **Actors** page with the actors button.
-  - Users can log out by pressing the **Logout** button.<br/><br/>
+  - Users can log out by pressing the **Logout** button.
   - Users can go to the **Dashboard** page by clicking the **Movie Mate (M)** icon.
   - Favorite movies and actors saved by users are listed on these pages.
   - Users can delete posts they have saved. If the deleted post has been shared before, it will be removed from the Dashboard page.
   - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
   - Users can share their saved posts. The same post cannot be shared more than once.
-  - These pages also show the number of the user's favorite movies or actors.
+  - These pages also show the number of the user's favorite movies or actors.<br/><br/>
 
 | Address | Map | 
 | --- | --- | 
