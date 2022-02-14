@@ -137,25 +137,6 @@ CSS and Bootstrap were used for styling.
 
 ## :ballot_box: MySQL Database
 
-
-| User Table | 
-| --- | 
-| ![2022-02-14 at 06-21-37](https://user-images.githubusercontent.com/24686636/153795454-0b3bf19b-6a32-4f90-9e2b-0c254bcb5e7d.png) |
-
-| Data Table | 
-| --- | 
-| ![2022-02-14 at 06-22-00](https://user-images.githubusercontent.com/24686636/153795515-a4eecd0e-91b9-454f-a64f-8e07ca51af51.png) |
-
-| Shared Table | 
-| --- | 
-| ![2022-02-14 at 06-24-48](https://user-images.githubusercontent.com/24686636/153795577-c8c46896-7515-417c-9dfc-896e0bb496f7.png) |
-
-| Likes Table | Comments Table | All Tables |
-| --- | --- | --- |
-| ![2022-02-14 at 06-24-35](https://user-images.githubusercontent.com/24686636/153795684-3f11e86d-115f-4021-9427-436d45375d01.png) | ![2022-02-14 at 06-22-27](https://user-images.githubusercontent.com/24686636/153795661-05bdebd6-0316-49c6-83e9-87ac9abb5871.png) | ![2022-02-14 at 06-33-49](https://user-images.githubusercontent.com/24686636/153795849-1c676384-6d2e-4df9-ae81-caf290226dbc.png) |
-
-  - **5 tables** were used for the project.<br/><br/>
-
 | User Table |  Comments Tables |
 | --- | --- |
 | ![2022-02-14 at 06-21-37](https://user-images.githubusercontent.com/24686636/153795454-0b3bf19b-6a32-4f90-9e2b-0c254bcb5e7d.png) | ![2022-02-14 at 06-22-27](https://user-images.githubusercontent.com/24686636/153795661-05bdebd6-0316-49c6-83e9-87ac9abb5871.png) |
@@ -174,10 +155,6 @@ CSS and Bootstrap were used for styling.
   - **Note**: Password must be at least 8 characters.
   <iframe src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FWjjbwWzoEE3G29L0t">via GIPHY</a></p>
   
-  
-
-  - gggggggggggggg
-  
 ## :computer: Setup
   
   - To run the project, NodeJS must be installed on your computer. After completing these installations, we open the git terminal. We write the following expression ``git clone https://github.com/mehtapugur/Cargo-Delivery-System.git`` and press the enter button. After opening the downloaded project in the code editor, we download the project dependencies by typing ``npm install`` in the terminal. After this process is finished, we run the project by typing ``npm start`` in the terminal. <br/><br/>
@@ -188,32 +165,49 @@ CSS and Bootstrap were used for styling.
     .
     │
     ├── src
-    │    └── cargo
-    │       └── address
-    │          └── address.css
-    │          └── address.html
-    │          └── address.js
-    │       └── map
-    │          └── map.html
-    │          └── map.js
-    │       └── status  
-    │          └── status.css
-    │          └── status.html
-    │          └── status.js
-    │       └── cargo.css     
-    │       └── cargo.html
-    │       └── cargo.js
-    │    └── main.css 
-    │    └── main.html
-    │    └── main.js
+    │    └── controllers
+    │       └── pageController.ts
+    │       └── userController.ts
+    │    └── entity
+    │       └── comments.entity.ts
+    │       └── data.entity.ts
+    │       └── likes.entity.ts
+    │       └── shared.entity.ts
+    │       └── user.entity.ts
+    │    └── middlewares
+    │       └── authMiddleware.ts
+    │    └── routes
+    │       └── pageRoute.ts
+    │       └── userRoute.ts
+    │    └── types
+    │       └── global.type.ts
+    │    └── app.ts
     │
-    ├── index.js
+    ├── views
+    │    └── partials
+    │       └── _footer.ejs
+    │       └── _header.ejs
+    │       └── _navigation.ejs
+    │    └── actors.ejs
+    │    └── add_actor.ejs
+    │    └── add_movie.ejs
+    │    └── dashboard.ejs
+    │    └── data.ejs
+    │    └── edit.ejs
+    │    └── index.ejs
+    │    └── login.ejs
+    │    └── movies.ejs
+    │    └── signup.ejs
     │
-    ├── project-diary.md
-    │                 
+    ├── .env
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    ├── project-diary.md                
     ├── readme.md    
     │
 <br/>
+
 
 ## :rocket: Project History
 
