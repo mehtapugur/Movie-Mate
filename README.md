@@ -156,6 +156,19 @@ CSS and Bootstrap were used for styling.
 
   - **5 tables** were used for the project.<br/><br/>
 
+| User Table |  Comments Tables |
+| --- | --- |
+| ![2022-02-14 at 06-21-37](https://user-images.githubusercontent.com/24686636/153795454-0b3bf19b-6a32-4f90-9e2b-0c254bcb5e7d.png) | ![2022-02-14 at 06-22-27](https://user-images.githubusercontent.com/24686636/153795661-05bdebd6-0316-49c6-83e9-87ac9abb5871.png) |
+
+| Data Table | Likes Table |
+| --- | --- | 
+| ![2022-02-14 at 06-22-00](https://user-images.githubusercontent.com/24686636/153795515-a4eecd0e-91b9-454f-a64f-8e07ca51af51.png) | ![2022-02-14 at 06-24-35](https://user-images.githubusercontent.com/24686636/153795684-3f11e86d-115f-4021-9427-436d45375d01.png) |
+
+| Shared Table | 
+| --- | 
+| ![2022-02-14 at 06-24-48](https://user-images.githubusercontent.com/24686636/153795577-c8c46896-7515-417c-9dfc-896e0bb496f7.png) |
+
+ - **5 tables** were used for the project.<br/><br/>
 
 | <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
   - **Note**: Password must be at least 8 characters.
