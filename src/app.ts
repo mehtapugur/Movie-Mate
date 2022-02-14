@@ -8,7 +8,7 @@
  * Imports
  */
 import express from "express";
-import session from "cookie-session";
+import session from "express-session";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import path from "path";
@@ -16,13 +16,9 @@ import bcrypt from "bcrypt";
 import pageRoute from "./routes/pageRoute";
 import userRoute from "./routes/userRoute";
 import { createConnection } from "typeorm";
-import { User } from "./entity/user.entity";
-import { Data } from "./entity/data.entity";
-import { Shared } from "./entity/shared.entity";
-import { Likes } from "./entity/likes.entity";
-import { Comments } from "./entity/comments.entity";
 import { getManager } from "typeorm";
 import passport from "passport";
+import { User } from "./entity/user.entity";
 import { Strategy } from "passport-facebook";
 const { OAuth2Client } = require("google-auth-library");
 const methodOverride = require("method-override");
@@ -66,17 +62,17 @@ app.use(
 );
 
 //Connection with MySQL database
-createConnection({
-  type: "mysql",
-  host: process.env.HOST,
-  // port: 3306,
-  username: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DB,
-  entities: [User, Data, Shared, Likes, Comments],
-  synchronize: false,
-  logging: false,
-});
+// createConnection({
+//   type: "mysql",
+//   host: process.env.HOST,
+//   port: 3306,
+//   username: process.env.USER,
+//   password: process.env.PASSWORD,
+//   database: process.env.DB,
+//   entities: ["src/entity/**/*.ts"],
+//   synchronize: false,
+//   logging: false,
+// });
 
 app.use(
   bodyParser.urlencoded({
@@ -235,6 +231,22 @@ app.use(
 );
 
 //start server
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server is running.`);
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log(`Server is running.`);
+// });
+
+createConnection()
+  .then(() => {
+    const port = process.env.PORT || 3000;
+
+    app.listen(port, () => {
+      console.log(`Server is running.`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+app.get("/404", (req, res) => {
+  res.render("404");
 });
