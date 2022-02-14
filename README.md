@@ -75,7 +75,8 @@ CSS and Bootstrap were used for styling.
   - Users must first register to be able to login to the application.
   - Registered users can login with their email and password.
   - To register, the password must be a minimum of 8 characters.
-  - Users can log into the app with their Google or Facebook account. These users are also registered in the database.<br/><br/>
+  - Users can log into the app with their Google or Facebook account. These users are also registered in the database.
+  - Unfortunately, Google broke my design as the login button is used by default.**:)**<br/><br/>
 
 | Dashboard | 
 | --- | 
@@ -113,28 +114,7 @@ CSS and Bootstrap were used for styling.
 
 | Edit | Post Page | 
 | --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="500px"> |
-
-| Edit | Post Page | 
-| --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="800px"> |
-
-| Edit | Post Page | 
-| --- | --- | 
 | ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="750px"> |
-
-
-| Edit | Post Page | 
-| --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="820px"> |
-
-| Edit | Post Page | 
-| --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="720px"> |
-
-| Edit | Post Page | 
-| --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="400px"> |
 
   - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
   - All content is displayed on posts specific pages.
@@ -174,6 +154,9 @@ CSS and Bootstrap were used for styling.
   - **Note**: Password must be at least 8 characters.
   <iframe src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FWjjbwWzoEE3G29L0t">via GIPHY</a></p>
   
+  
+## :ballot_box: Database
+  - gggggggggggggg
   
 ## :computer: Setup
   
@@ -224,11 +207,6 @@ This project is under the terms of the MIT license.
 <br/>
 <br/>
 Contact: [LinkedIn](https://www.linkedin.com/in/mehtapugur)
-  
-  :ballot_box:
-:toolbox:
-:ice_cube:
-
   
 ```js
 /**
