@@ -78,6 +78,13 @@ CSS and Bootstrap were used for styling.
   - Users can log into the app with their Google or Facebook account. These users are also registered in the database.
   - Unfortunately, Google broke my design as the login button is used by default.**:)**<br/><br/>
 
+| Google Auth | Facebook Auth | 
+| --- | --- | 
+| ![2022-02-14 at 05-52-55](https://user-images.githubusercontent.com/24686636/153794150-12401129-9131-44aa-b5cf-4895a289c9ae.gif) | ![ff](https://user-images.githubusercontent.com/24686636/153794402-fb8ca936-f91d-4814-be42-bfb045479068.gif) |
+
+  - Users can log in with their Google or Facebook accounts.
+  - User information is saved in the database.<br/><br/>
+
 | Dashboard | 
 | --- | 
 | ![dashboard](https://user-images.githubusercontent.com/24686636/153763067-5ee4b3cc-d2a9-4be8-afff-7146e4fbc20b.png) |
@@ -121,6 +128,22 @@ CSS and Bootstrap were used for styling.
   - Users can comment on the post and the comments are displayed in order.
   - Next to the comment is the author of the comment.<br/><br/>
 
+| Edit | Post Page | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://user-images.githubusercontent.com/24686636/153793849-55ca9c3e-bd84-4406-ae1a-d6d4b5a56171.gif" width="750px"> |
+
+  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
+  - All content is displayed on posts specific pages.
+  - Users can comment on the post and the comments are displayed in order.
+  - Next to the comment is the author of the comment.<br/><br/>
+
+| JWT | 
+| --- | 
+| ![jwttall](https://user-images.githubusercontent.com/24686636/153793122-c689cf53-ea4e-48cb-99a1-7ddf108fb633.png) |
+
+  - **Json Web Token** is created for logged-in users.
+  - The token is deleted when the user logs out.<br/><br/>
+
 | MySQL Database | 
 | --- | 
 | <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
@@ -130,14 +153,7 @@ CSS and Bootstrap were used for styling.
   - A key is created for each location under **locations**.
   - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
 
-| JWT | 
-| --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
 
-  - A **key** is generated for each user.
-  - There are **users** and **locations**.
-  - A key is created for each location under **locations**.
-  - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
 
 | Google Auth | Facebook Auth | 
 | --- | --- | 
