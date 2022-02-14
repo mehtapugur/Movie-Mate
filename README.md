@@ -70,15 +70,12 @@ CSS and Bootstrap were used for styling.
 
 | Login | Signup | 
 | --- | --- | 
-| ![Preview](https://user-images.githubusercontent.com/24686636/139925533-34187488-d284-47bb-9120-e8e6de5fcd51.png) | <img src="https://media.giphy.com/media/1J0KMKTZJiy94kiR2d/giphy.gif" width="720px"> |
+| ![loginn](https://user-images.githubusercontent.com/24686636/153781594-e91840f5-b192-4584-8971-37638ebd8e7c.png) | ![sign](https://user-images.githubusercontent.com/24686636/153781605-03eaf773-3580-4b83-99fa-2826fb527206.png) |
 
-  - The latitude and longitude information of the cargoes in the database are listed on the **Status Page**.
-  - The status of the cargoes is shown, if the **send** information is "true", that is, if it has been sent, it checks the checkbox.
-  - The cargo location with "true" send information is deleted from the map, the marker is deleted.
-  - Users can delete the cargoes by pressing the **X** button.
-  - Users can **Save** cargo with the latitude and longitude values they type.
-  - Users can open the Map page with the **Open Map** button.
-  - The shortest path is drawn for the first two cargo locations in the database.<br/><br/>
+  - Users must first register to be able to login to the application.
+  - Registered users can login with their email and password.
+  - To register, the password must be a minimum of 8 characters.
+  - Users can log into the app with their Google or Facebook account. These users are also registered in the database.<br/><br/>
 
 | Dashboard | 
 | --- | 
@@ -117,6 +114,19 @@ CSS and Bootstrap were used for styling.
 | Edit | Post Page | 
 | --- | --- | 
 | ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="500px"> |
+
+| Edit | Post Page | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="800px"> |
+
+| Edit | Post Page | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="750px"> |
+
+
+| Edit | Post Page | 
+| --- | --- | 
+| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="820px"> |
 
 | Edit | Post Page | 
 | --- | --- | 
