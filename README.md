@@ -3,7 +3,7 @@
   <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;
   <a href="#sparkles-main-features">Features</a>&nbsp;&nbsp;|&nbsp;
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#camera_flash-screenshots">Database</a>&nbsp;&nbsp;|&nbsp;
+  <a href="#ballot_box-mysql-database">Database</a>&nbsp;&nbsp;|&nbsp;
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;
   <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;
@@ -121,15 +121,6 @@ CSS and Bootstrap were used for styling.
 
 | Edit | Post Page | 
 | --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="750px"> |
-
-  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
-  - All content is displayed on posts specific pages.
-  - Users can comment on the post and the comments are displayed in order.
-  - Next to the comment is the author of the comment.<br/><br/>
-
-| Edit | Post Page | 
-| --- | --- | 
 | ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://user-images.githubusercontent.com/24686636/153793849-55ca9c3e-bd84-4406-ae1a-d6d4b5a56171.gif" width="750px"> |
 
   - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
@@ -144,26 +135,26 @@ CSS and Bootstrap were used for styling.
   - **Json Web Token** is created for logged-in users.
   - The token is deleted when the user logs out.<br/><br/>
 
-| MySQL Database | 
+## :ballot_box: MySQL Database
+
+
+| User Table | 
 | --- | 
-| <img src="https://user-images.githubusercontent.com/24686636/140101981-9c7e16b6-7831-4daa-bbc3-304b21ff2819.png" width="600px"> |
+| ![2022-02-14 at 06-21-37](https://user-images.githubusercontent.com/24686636/153795454-0b3bf19b-6a32-4f90-9e2b-0c254bcb5e7d.png) |
 
-  - A **key** is generated for each user.
-  - There are **users** and **locations**.
-  - A key is created for each location under **locations**.
-  - **latitude**, **longitude** and **send** information of each location is stored. <br/><br/>
+| Data Table | 
+| --- | 
+| ![2022-02-14 at 06-22-00](https://user-images.githubusercontent.com/24686636/153795515-a4eecd0e-91b9-454f-a64f-8e07ca51af51.png) |
 
+| Shared Table | 
+| --- | 
+| ![2022-02-14 at 06-24-48](https://user-images.githubusercontent.com/24686636/153795577-c8c46896-7515-417c-9dfc-896e0bb496f7.png) |
 
+| Likes Table | Comments Table | All Tables |
+| --- | --- | --- |
+| ![2022-02-14 at 06-24-35](https://user-images.githubusercontent.com/24686636/153795684-3f11e86d-115f-4021-9427-436d45375d01.png) | ![2022-02-14 at 06-22-27](https://user-images.githubusercontent.com/24686636/153795661-05bdebd6-0316-49c6-83e9-87ac9abb5871.png) | ![2022-02-14 at 06-33-49](https://user-images.githubusercontent.com/24686636/153795849-1c676384-6d2e-4df9-ae81-caf290226dbc.png) |
 
-| Google Auth | Facebook Auth | 
-| --- | --- | 
-| ![edit](https://user-images.githubusercontent.com/24686636/153768415-24d3cb06-050b-4754-985f-84d0bde40952.png) | <img src="https://media.giphy.com/media/FWjjbwWzoEE3G29L0t/giphy.gif" width="400px"> |
-
-  - Users can update their saved posts. If the updated post has been shared before, it will also be updated on the Dashboard page.
-  - All content is displayed on posts specific pages.
-  - Users can comment on the post and the comments are displayed in order.
-  - Next to the comment is the author of the comment.<br/><br/>
-
+  - **5 tables** were used for the project.<br/><br/>
 
 
 | <img src="https://user-images.githubusercontent.com/24686636/139913804-64b32830-c50c-4efb-928f-6ba8e8c8e1b3.png" width="600px"> |
@@ -171,7 +162,7 @@ CSS and Bootstrap were used for styling.
   <iframe src="https://giphy.com/embed/FWjjbwWzoEE3G29L0t" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FWjjbwWzoEE3G29L0t">via GIPHY</a></p>
   
   
-## :ballot_box: Database
+
   - gggggggggggggg
   
 ## :computer: Setup
