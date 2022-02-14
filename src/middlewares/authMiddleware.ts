@@ -1,57 +1,34 @@
+/**
+ * Imports
+ */
 import { RequestHandler } from "express";
-//import User from "../models/User";
-import { getManager } from "typeorm";
-//import { User } from "../entity/user.entity";
 import jwt, { VerifyErrors } from "jsonwebtoken";
 
 export const auth: RequestHandler = (req, res, next) => {
   //get token from cookie
-  const token = req.cookies.jwt;
-  req.session.browserInfo = req.headers["user-agent"]; //browser information
-  console.log("buraya kadar geldim");
+  globalThis.token = req.cookies.jwt;
   //verify token
-  if (token) {
-    console.log("token var");
+  if (globalThis.token) {
     jwt.verify(
-      token,
+      globalThis.token,
       process.env.JWT_SECRET,
-      (err: VerifyErrors, decoded: any) => {
-        console.log("ulasti");
-        if (err) return next();
-        //compare browser information
-        if (decoded.browserInfo === req.headers["user-agent"]) {
-          console.log(decoded);
-          console.log(req.session);
-          next();
-        }
+      (err: VerifyErrors) => {
+        next();
       }
     );
   } else {
-    console.log("hata aldım");
     res.redirect("/login");
   }
 };
 
-// //check current user
-// export const userControl: RequestHandler = (req, res, next) => {
-//   //create token from cookie
-//   const token = req.cookies.jwt;
-
-//   if (token) {
-//     jwt.verify(
-//       token,
-//       process.env.JWT_KEY,
-//       async (err: VerifyErrors, decoded: any) => {
-//         if (err) {
-//           console.log(err.message);
-//           next();
-//         } else {
-//           console.log(decoded);
-//           next();
-//         }
-//       }
-//     );
-//   } else {
-//     next();
-//   }
-// };
+//if the user is logged in they are not redirected to the login page
+export const isLogged: RequestHandler = (req, res, next) => {
+  try {
+    if (req.session.userID) {
+      return res.redirect("/users/dashboard");
+    }
+    next();
+  } catch (Error) {
+    throw new Error();
+  }
+};

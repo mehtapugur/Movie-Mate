@@ -1,0 +1,106 @@
+<%- include("partials/_header"); %>
+  <div class="home-container">
+    <%- include("partials/_navigation"); %>
+      <div class="container">
+        <div class="row row--top-40">
+          <div class="col-md-10 offset-1">
+            <h2 class="row__title">
+              <% if(data.type=="movie" ) { %>
+                <i class="fa-solid fa-clapperboard fa-lg"></i>
+                <% } else if(data.type=="actor" ) { %>
+                  <i class="fa-solid fa-user"></i>
+                  <% } %>
+            </h2>
+          </div>
+        </div>
+        <div class="row row--top-20">
+          <div class="col-md-10 offset-1">
+            <div class="table-container">
+              <table class="table" style="border-spacing: 0 1.5rem;">
+                <tbody class="table__tbody">
+                  <tr class="table-row">
+                    <td class="table-row__td">
+                      <div class="table-row__info">
+                        <p class="table-row__name">
+                          <a href="" class="table-row__name">
+                            <b>
+                              <%= data.name %>&nbsp;&nbsp;
+                            </b>
+                          </a>
+                          <span>&#8226; <%= data.type %></span>
+                        </p>
+                        <p class=" table-row__description">
+                          <%= data.description %>
+                        </p>
+                        <div class="post-footer">
+                          <div class="icons">
+                            <a href="/users/likes/<%= data.id %>?_method=PUT">
+                              <span class="fa-stack small" style="font-size: 1rem;">
+                                <span class="fa-regular fa-heart fa-stack-2x"
+                                  style="color:rgba(216, 209, 143, 0.7);"></span>
+                                <strong class="fa-stack-1x" style="color:rgba(216, 209, 143, 0.7); font-size: 78%">
+                                  <%= shared.likes %>
+                                </strong>
+                              </span>
+                            </a>
+                            <a href="">
+                              <span class="fa-stack small" style="font-size: 1rem;">
+                                <span class="far fa-comment fa-stack-2x" style="color:rgba(216, 209, 143, 0.7);"></span>
+                                <strong class="fa-stack-1x" style="color:rgba(216, 209, 143, 0.7); font-size: 78%">
+                                  <%= shared.comments %>
+                                </strong>
+                              </span>
+                            </a>
+                          </div>
+                          <p class="shared-user"> <span>shared by</span>
+                            <b>
+                              <% const yaz=users.find((item)=> {return item.id == shared.user_id; }); %>
+                                <%= yaz.name %>
+                                  <%= yaz.surname %>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <% if(shared.comments> 0) { %>
+              <p class="comments">Comments&nbsp;(<%= shared.comments %>)</p>
+              <div class="comments-container">
+                <% for(let i=0; i< shared.comments; i++) { %>
+                  <div>
+                    <p class="shared-user"><span>replied by</span>
+                      <b>
+                        <% const ekle=users.find((item)=> {return item.id == comments[i].user_id; }); %>
+                          <%= ekle.name %>
+                            <%= ekle.surname %>
+                      </b>
+                    </p>
+                    <p class="comments">
+                      <%= comments[i].comments %>
+                    </p>
+                  </div>
+                  <% } %>
+              </div>
+              <% } %>
+                <div class="mt-3">
+                  <form method="post" action="/users/comments/<%= data.id%>?_method=PUT" class="tm-contact-form">
+                    <div class="form-group">
+                      <textarea rows="3" type="comments" name="comments" id="comments" class="form-control rounded-0"
+                        placeholder="(max 255 characters)" maxlength="255" required></textarea>
+                    </div>
+                    <div class="form-group mb-0">
+                      <button type="submit" id="submit"
+                        class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit send-button"><span><i
+                            class="fa-solid fa-reply"></i>
+                        </span></button>
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%- include("partials/_footer"); %>

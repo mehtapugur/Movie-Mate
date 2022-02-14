@@ -1,37 +1,39 @@
+/**
+ * Gusto & RemoteTeam Node.js Bootcamp
+ * Final Project
+ * Mehtap Ugur
+ */
+
+/**
+ * Imports
+ */
 import express from "express";
-import session from "express-session";
+import session from "cookie-session";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import path from "path";
+import bcrypt from "bcrypt";
+import pageRoute from "./routes/pageRoute";
+import userRoute from "./routes/userRoute";
 import { createConnection } from "typeorm";
 import { User } from "./entity/user.entity";
 import { Data } from "./entity/data.entity";
 import { Shared } from "./entity/shared.entity";
+import { Likes } from "./entity/likes.entity";
+import { Comments } from "./entity/comments.entity";
 import { getManager } from "typeorm";
-import { RequestHandler } from "express";
+import passport from "passport";
+import { Strategy } from "passport-facebook";
+const { OAuth2Client } = require("google-auth-library");
 const methodOverride = require("method-override");
-//import $ from "jquery";
-import jsdom from "jsdom";
-const $ = require("jquery")(new jsdom.JSDOM().window);
-import path from "path";
-import bcrypt from "bcrypt";
-import jwt, { VerifyErrors } from "jsonwebtoken";
-//const { OAuth2Client } = require("google-auth-library");
-const passport = require("passport");
-const { Strategy } = require("passport-google-oauth20");
-//const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, SESSION_SECRET } = process.env;
-// import authRoute from "./routes/authRoute";
-// import { auth, userControl } from "./middlewares/authMiddleware";
-// import { getHomePage } from "./controllers/authController";
-import pageRoute from "./routes/pageRoute";
-import userRoute from "./routes/userRoute";
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
+//create app and use .env variables
 const app = express();
 require("dotenv").config();
 
-// view engine
+// iew engine
 app.set("view engine", "ejs");
-
-//globalThis.userIN = null;
 
 //give error
 process.on("uncaughtException", (err) => {
@@ -40,7 +42,7 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// middleware
+//middlewares
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -56,28 +58,22 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use("*", (req, res, next) => {
-  globalThis.userIN = req.session.userID;
-  console.log("userIN:", globalThis.userIN);
-  next();
-});
 
-app.use(passport.initialize());
-//app.use(passport.session());
 app.use(
   methodOverride("_method", {
     methods: ["POST", "GET"],
   })
 );
 
+//Connection with MySQL database
 createConnection({
   type: "mysql",
-  host: "localhost",
-  port: 3306,
-  username: "root",
-  password: "root",
-  database: "node_auth",
-  entities: [User, Data, Shared],
+  host: process.env.HOST,
+  // port: 3306,
+  username: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DB,
+  entities: [User, Data, Shared, Likes, Comments],
   synchronize: false,
   logging: false,
 });
@@ -88,107 +84,157 @@ app.use(
   })
 );
 
-// const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+/*
+  Google Auth for Sign-In with Google account
+*/
+app.post("/googleAuth", (req, res) => {
+  //get token
+  let token = req.body.token;
+  console.log(token); //TODO delete
 
-// app.post("/google", (req, res) => {
-//   const { token } = req.body;
-//   client
-//     .verifyIdToken({
-//       idToken: token,
-//       audience: process.env.GOOGLE_CLIENT_ID,
-//     })
-//     .then((response) => res.send(response));
-// });
+  //verify user
+  async function verify() {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    console.log(payload); //TODO delete
+    console.log(payload.email); //TODO delete
+    const password = payload.sub;
+    const repository = await getManager().getRepository(User);
+    //find user in repository
+    const user = await repository.findOne({
+      where: { email: payload.email },
+    });
+
+    //if user doesnt exist, create and save
+    if (!user) {
+      const user = await repository.save({
+        name: payload.given_name,
+        surname: payload.family_name,
+        email: payload.email,
+        password: await bcrypt.hash(password, 8),
+      });
+      req.session.userID = user.id;
+    }
+
+    //save user.is to session
+    req.session.userID = user.id;
+  }
+  //call verify function
+  verify()
+    .then(() => {
+      res.cookie("jwt", token); //save jwt to cookie
+      res.send("success");
+    })
+    .catch(console.error);
+});
+
+//check user and go to dashboard page
+app.get("/dashboard", checkAuthenticated, (req, res) => {
+  res.status(200).redirect("/users/dashboard");
+});
+
+//check user to login with google account
+function checkAuthenticated(req, res, next) {
+  let token = req.cookies["jwt"];
+
+  async function verify() {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+  }
+  verify()
+    .then(() => {
+      next();
+    })
+    .catch((err) => {
+      res.redirect("/login");
+    });
+}
+
+//save user id for every request
+app.use("*", (req, res, next) => {
+  globalThis.userIN = req.session.userID;
+  console.log("userIN:", globalThis.userIN);
+  next();
+});
+
+//main routes
+app.use("/", pageRoute);
+app.use("/users", userRoute);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(function (user, cb) {
+  cb(null, user);
+});
+
+passport.deserializeUser(function (obj, cb) {
+  cb(null, obj);
+});
 
 passport.use(
   new Strategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/google/return", //http://localhost:3000
+      clientID: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      callbackURL: "http://localhost:3000/auth/facebook",
+      profileFields: ["id", "name", "emails"],
     },
-    (accessToken, refreshToken, profile, cb) => {
-      console.log(profile);
-      console.log("*****************************");
-      console.log(profile.id);
-      console.log(profile.emails[0].value);
-      console.log(profile.name.givenName);
-      console.log(profile.name.familyName);
-      const createUser = async () => {
-        console.log("geldi1");
-        try {
-          console.log("geldi2");
-          const repository = getManager().getRepository(User);
-          const password = profile.id;
-          const user = await repository.save({
-            //id: profile.id,
-            name: profile.name.givenName,
-            surname: profile.name.familyName,
-            email: profile.emails[0].value,
-            password: await bcrypt.hash(password, 8),
-          });
+    async function (accessToken, refreshToken, profile, done) {
+      globalThis.token = accessToken;
 
-          //const browserInfo = req.headers["user-agent"];
-          // const createToken = (id: string, browserInfo: string): string =>
-          //   jwt.sign({ id, browserInfo }, process.env.JWT_SECRET, {
-          //     expiresIn: "60m", //minutes, session time
-          //   });
-          // const token = createToken(user.id, browserInfo);
-          // res.cookie("jwt", token, { httpOnly: true, maxAge: 600000 });
-          //create new user
-          console.log("geldim");
-        } catch (err) {
-          console.log("hata");
-        }
-      };
-      createUser();
-      return cb(null, profile);
+      const repository = await getManager().getRepository(User);
+      //find user in repository
+      const user = await repository.findOne({
+        where: { email: profile.emails[0].value },
+      });
+
+      //create password
+      const password = profile.id;
+      //if user doesnt exist, create and save
+      if (!user) {
+        const user = await repository.save({
+          name: profile.name.givenName,
+          surname: profile.name.familyName,
+          email: profile.emails[0].value,
+          password: await bcrypt.hash(password, 8),
+        });
+        //save user id
+        globalThis.userIN = user.id;
+      } else {
+        globalThis.userIN = user.id;
+      }
+
+      done(null, profile);
     }
   )
 );
 
-passport.serializeUser((user, cb) => {
-  cb(null, user);
-});
+app.use(
+  "/fb/facebook",
+  passport.authenticate("facebook", { scope: ["email"] })
+);
 
-passport.deserializeUser((obj, cb) => {
-  cb(null, obj);
-});
+app.use(
+  "/auth/facebook",
+  passport.authenticate("facebook", {
+    failureRedirect: "/login",
+  }),
+  function (req: any, res) {
+    req.session.userID = globalThis.userIN;
+    //save jwt in cookie
+    res.cookie("jwt", globalThis.token);
+    res.redirect("/dashboard");
+  }
+);
 
-//$.ajax().then().catch().finnally();
-
-// //check user
-// app.use(userControl);
-
-// // //main page
-// // app.get("/", (req, res, next) => {
-// //   res.render("index");
-// // });
-// // app.get("/home", auth, getHomePage);
-// // //app.use("/users", authRoute); //?
-// // app.use(authRoute);
-// app.use("/", authRoute);
-// app.use("/users", authRoute);
-
-app.use("/", pageRoute);
-app.use("/users", userRoute);
-
-// //const PORT = process.env.PORT;
-// const HOST = process.env.HOST;
-
-// app.listen(3000, HOST, () => {
-//   console.log(`Server is listening ${HOST}:3000`);
-// });
-
-// $(function () {
-//   $(".begen-button").on("click", function () {
-//     console.log("begendi");
-//     // $.ajax({
-
-//     // })
-//   });
-// });
-
+//start server
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running.`);
 });

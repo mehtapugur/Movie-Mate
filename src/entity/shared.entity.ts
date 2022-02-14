@@ -1,4 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity("Shared")
 export class Shared {
@@ -8,7 +13,7 @@ export class Shared {
   @Column({ length: 50 })
   name: string;
 
-  @Column({ length: 255 })
+  @Column({ length: 500 })
   description: string;
 
   @Column({ length: 10 })
@@ -17,6 +22,12 @@ export class Shared {
   @Column({ default: 0 })
   likes: number;
 
+  @Column({ default: 0 })
+  comments: number;
+
   @Column()
   user_id: number;
+
+  @CreateDateColumn({ default: Date.now(), type: "date" })
+  sharedAt: Date;
 }

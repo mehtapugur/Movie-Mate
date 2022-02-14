@@ -2,16 +2,13 @@
   <div class="home-container">
     <%- include("partials/_navigation"); %>
       <div class="container">
-        <div class="row row--top-40">
-          <div class="col-md-12">
-            <h2 class="row__title">Actors (<%= actors.length %>)</h2>
+        <div class="col-md-12 row row--top-40 data-header">
+          <div class="">
+            <h2 class="row__title">Your Favorite Actors (<%= actors.length %>)</h2>
           </div>
-          <div class="col-md-12">
-            <button type="button" class="button button--primary" aria-label="Logout">
-              <a href="/users/add_actor">Add actors</a>
-            </button>
+          <div class="text-center">
+            <a href="/users/add_actor"><i class="fa-solid fa-circle-plus fa-2x"></i></a>
           </div>
-
         </div>
         <div class="row row--top-20">
           <div class="col-md-12">
@@ -19,40 +16,52 @@
               <table class="table">
                 <thead class="table__thead">
                   <opttr>
-                    <th class="table__th">Name</th>
-                    <th class="table__th">Description</th>
+                    <th class="table__th">Actor</th>
+                    <th class="table__th">Delete</th>
+                    <th class="table__th">Update</th>
+                    <th class="table__th">Share</th>
                   </opttr>
                 </thead>
                 <tbody class="table__tbody">
                   <% for(let i=0; i < actors.length; i++) { %>
                     <tr class="table-row">
-                      <td class="table-row__td">
+                      <td class="table-row__td" style="display: flex; flex-direction: column;">
                         <div class="table-row__info">
-                          <p class="table-row__name">
-                            <%= actors[i].name %>
-                              <%= actors[i].description %>
+                          <a href="/users/datas/<%= actors[i].id %>" class="tm-img-overlay">
+                            <p class="table-row__name">
+                              <b>
+                                <%= actors[i].name %>
+                              </b>
+                            </p>
+                          </a>
+                        </div>
+                        <div class="table-row__info">
+                          <p class="table-row__description">
+                            <%= actors[i].description %>
                           </p>
                         </div>
-                        <a href="/users/datas/<%= actors[i].id %>" class="position-absolute tm-img-overlay">
-                          <i class="fas fa-play tm-overlay-icon">ac</i>
-                        </a>
                       </td>
                       <td class="table-row__td">
-                        <div class="table-row__info">
+                        <div class="">
                           <div class="text-center">
-                            <a href="/users/datas/<%= actors[i].id %>?_method=DELETE"
-                              class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"
-                              onclick="return confirm('Are you sure?')"><span>Delete
-                                Movie</span></a>
+                            <a href="/users/datas/<%= actors[i].id %>?_method=DELETE" class=""
+                              onclick="return confirm('Are you sure?')"><i class="fa-solid fa-trash-can fa-lg"></i></a>
                           </div>
                         </div>
                       </td>
                       <td class="table-row__td">
-                        <div class="table-row__info">
+                        <div class="">
                           <div class="text-center">
-                            <a href="/users/datas/edit/<%= actors[i].id %>"
-                              class="btn btn-primary p-0 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Update
-                                Details</span></a>
+                            <a href="/users/datas/edit/<%= actors[i].id %>" class=""><i
+                                class="fa-solid fa-pencil fa-lg"></i></a>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="table-row__td">
+                        <div class="">
+                          <div class="text-center">
+                            <a href="/users/share/<%= actors[i].id %>" class=""><i
+                                class="fa-solid fa-share-from-square fa-lg"></i></a>
                           </div>
                         </div>
                       </td>

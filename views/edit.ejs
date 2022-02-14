@@ -1,67 +1,56 @@
-<%- include("partials/_header") -%>
-
-  <body>
-    <div class="tm-page-wrap mx-auto">
-      <div class="position-relative">
-        <div class="tm-welcome-container tm-fixed-header tm-fixed-header-3">
-          <div class="text-center">
-            <p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 text-white mx-auto">
-              Talk to Us<br>about any question you have
-            </p>
-          </div>
+<%- include('partials/_header') -%>
+  <div class="tm-page-wrap mx-auto">
+    <div class="position-relative mb-5">
+      <div class="tm-welcome-container tm-fixed-header tm-fixed-header-3">
+        <div class="text-center add-section">
+          <p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 mx-auto">
+            Welcome again!
+          </p>
         </div>
-
-        <div id="tm-fixed-header-bg"></div> <!-- Header image -->
       </div>
-
-      <!-- Page content -->
-      <main>
-        <div class="container-fluid px-0">
-          <div class="mx-auto tm-content-container">
-            <div class="row mt-3 pb-3">
-              <div class="col-12">
-                <div class="mx-auto tm-about-text-container px-3">
-                  <h2 class="tm-page-title mb-4 tm-text-primary">Edit</h2>
-                  <p class="mb-4">
-                    Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam
-                    tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus
-                    lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template
-                    ZIP file on any template collection website.
-                  </p>
-                </div>
+      <div id="tm-fixed-header-bg"></div>
+    </div>
+    <!-- Page content -->
+    <main>
+      <div class="container">
+        <div class="mx-auto tm-content-container">
+          <div class="row mt-3pb-3 mb-4">
+            <div class="col-lg-12">
+              <div class="mx-auto tm-about-text-container add-paragraph">
+                <h2 class="tm-page-title mb-3 tm-text-primary add-header">Edit</h2>
+                <p>
+                  You can update the information about your favorite you saved before here.</p>
               </div>
             </div>
-            <div class="mx-auto pb-3 tm-about-text-container px-3">
-              <div class="row">
-                <div class="col-lg-12 mb-5">
-                  <form method="POST" action="/users/movies/<%= movie.id%>?_method=PUT" class="tm-contact-form">
-                    <div class="form-group">
-                      <input type="name" name="name" id="name" value="<%= movie.name %>" class="form-control rounded-0"
-                        placeholder="Name" required="" />
-                    </div>
+          </div>
+          <div class="mx-auto pb-3 tm-about-text-container">
+            <div class="row">
+              <div class="col-lg-12 mb-5">
+                <form method="post" action="/users/datas/<%= data.id%>?_method=PUT" class="tm-contact-form">
+                  <div class="form-group">
+                    <input type="name" name="name" id="name" value="<%= data.name %>" class="form-control rounded-0"
+                      placeholder="(max 50 characters)" maxlength="50" required>
+                  </div>
 
-                    <div class="form-group">
-                      <textarea rows="8" text="description" name="description" id="description"
-                        class="form-control rounded-0" placeholder="Tell us about your friend"
-                        required><%= movie.description %></textarea>
-                    </div>
-
-                    <div class="form-group mb-0">
-                      <button type="submit"
-                        class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update</span></button>
-                    </div>
-                  </form>
-                </div>
+                  <div class="form-group">
+                    <textarea rows="8" type="description" name="description" id="description"
+                      class="form-control rounded-0" placeholder="(max 500 characters)" maxlength="500"
+                      required><%= data.description %></textarea>
+                  </div>
+                  <div class="form-group mb-0">
+                    <button type="submit" id="submit"
+                      class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit send-button"><span><i
+                          class="fa-regular fa-paper-plane"></i></span></button>
+                  </div>
+                </form>
 
               </div>
             </div>
           </div>
-
         </div>
-      </main>
 
-      <div class="container-fluid tm-content-container mx-auto pt-4">
-        <%- include("partials/_footer") -%>
-  </body>
+      </div>
+    </main>
 
-  </html>
+    <div class="container-fluid tm-content-container mx-auto pt-4">
+      <%- include('partials/_footer') -%>

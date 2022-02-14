@@ -210,14 +210,15 @@ npm start
     ├── package-lock.json
     ├── package.json
     ├── project-diary.md                
-    ├── readme.md    
+    ├── README.md 
+    ├── tsconfig.json   
     │
 <br/>
 
 
 ## :rocket: Project History
 
-<a href="https://github.com/mehtapugur/Cargo-Delivery-System/blob/main/project-diary.md">Here<a/>, the project has a 15-day development period in Turkish. You can read if you want.<br/><br/>
+<a href="https://github.com/Kodluyoruz-NodeJs-Bootcamp/final-project-mehtapugur/blob/main/project-diary.md">Here<a/>, the project has a development period in Turkish. You can read if you want.<br/><br/>
 
 ## :movie_camera: Project Video
   - video  

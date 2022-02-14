@@ -1,52 +1,48 @@
 <%- include('partials/_header') -%>
   <div class="tm-page-wrap mx-auto">
-    <div class="position-relative">
+    <div class="position-relative mb-5">
       <div class="tm-welcome-container tm-fixed-header tm-fixed-header-3">
-        <div class="text-center">
-          <p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 text-white mx-auto">
-            Talk to Us<br>about any question you have
+        <div class="text-center add-section">
+          <p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 mx-auto">
+            Welcome<br>Let's share your favorite movie!
           </p>
         </div>
       </div>
       <div id="tm-fixed-header-bg"></div>
     </div>
-
     <!-- Page content -->
     <main>
       <div class="container">
         <div class="mx-auto tm-content-container">
-          <div class="row mt-3pb-3">
-            <div class="col-12">
-              <div class="mx-auto tm-about-text-container px-3">
-                <h2 class="tm-page-title mb-4 tm-text-primary">Add Datas</h2>
+          <div class="row mt-3pb-3 mb-4">
+            <div class="col-10 offset-1">
+              <div class="mx-auto tm-about-text-container add-paragraph">
+                <h2 class="tm-page-title mb-3 tm-text-primary add-header">Add Movie</h2>
                 <p>
-                  You can upload your Datas from this area and view your pdf files on the special Documents page
-                  and perform operations such as deleting, updating and querying.
+                  You can add your favorite movies to this area and view them on the Movies page specific to you, share
+                  them with other users, and perform operations such as deleting and updating.
                 </p>
               </div>
             </div>
           </div>
           <div class="mx-auto pb-3 tm-about-text-container">
             <div class="row">
-              <div class="col-lg-12 mb-5">
+              <div class="col-lg-10 offset-1 mb-5">
                 <form method="post" action="/users/movies" class="tm-contact-form">
                   <div class="form-group">
                     <input type="name" name="name" id="name" class="form-control rounded-0"
-                      placeholder="Data Name (not required)">
+                      placeholder="Movie Name (max 50 characters)" maxlength="50" required>
                   </div>
 
                   <div class="form-group">
                     <textarea rows="8" type="description" name="description" id="description"
-                      class="form-control rounded-0" placeholder="Data Description (not required)"></textarea>
+                      class="form-control rounded-0" placeholder="Movie Description (max 500 characters)"
+                      maxlength="500" required></textarea>
                   </div>
-                  <!--
-                  <div class="from-group">
-                    <input type="file" name="pdf" class="form-control-file rounded-0">
-                  </div>
-                  -->
                   <div class="form-group mb-0">
                     <button type="submit" id="submit"
-                      class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
+                      class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit send-button"><span><i
+                          class="fa-regular fa-paper-plane"></i></span></button>
                   </div>
                 </form>
               </div>

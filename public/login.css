@@ -5,19 +5,15 @@ body {
   padding: 0;
   box-sizing: box-border;
   font-family: "GT Walsheim Pro", Arial, sans-serif;
-  /* background: #e9e5c4; /* #f4f4f4;*/
-  /* background-image: url("images/my.jpeg");*/
   background-color: rgba(247, 233, 142, 0.2);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 
 .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* color: white;*/
   height: 85%;
   margin: auto;
   border: 2px solid #ebc700;
@@ -30,15 +26,9 @@ body {
   width: 28rem;
   height: 90%;
   position: relative;
-  /* top: 50%;
-  left: 50%;
-  margin-top: -275px;
-  margin-left: -165px; */
   align-items: center;
   justify-content: center;
   text-align: center;
-  /*  background-color: #064635;
-  background: linear-gradient(45deg, #e1e1c4 0, rgba(255, 234, 112, 0.8) 100%);*/
 }
 
 .welcome-section {
@@ -50,18 +40,14 @@ body {
   font-size: 26px;
   line-height: 32px;
   font-weight: bold;
-  color: black;
   max-width: 17rem;
   padding: 1.2rem;
   height: 100%;
-  background: linear-gradient(90deg, rgba(247, 233, 142, 0.8) 0, #ebc700 100%);
-  /*
-  background: linear-gradient(
-    90deg,
-    rgba(247, 233, 142, 0.8) 0,
-    rgba(255, 234, 112, 0.8) 100%
-  );
-  */
+  background: transparent;
+}
+
+.facebook {
+  width: 20.55rem;
 }
 
 .welcome-section h2 {
@@ -69,12 +55,14 @@ body {
   font-size: 26px;
   line-height: 32px;
   font-weight: bold;
+  color: rgba(37, 44, 40, 0.75);
 }
 
 .welcome-section h4 {
   font-size: 18px;
   line-height: 22px;
   font-weight: normal;
+  color: rgba(37, 44, 40, 0.7);
 }
 
 .login-separator {
@@ -82,7 +70,7 @@ body {
   width: 100px;
   margin: 24px 0px;
   border-radius: 8px;
-  border: 4px solid #ebc700;
+  border: 4px solid #f5d002;
   align-self: flex-start;
 }
 
@@ -91,9 +79,6 @@ body {
 }
 
 .container {
-  /* width: 330px;
-  height: 550px; 
-  margin-left: 1.3rem;*/
   display: flex;
   flex-direction: column;
   height: 80%;
@@ -102,14 +87,8 @@ body {
   padding: 1rem;
   align-items: center;
   justify-content: center;
-  /* top: 50%;
-  left: 50%;
-  margin-top: -275px;
-  margin-left: -165px; */
   text-align: center;
-  background-color: #e1e1c4; /* #2f4f4f;*/
-
-  /*border: 1px solid red; */
+  background-color: #e1e1c4;
 }
 
 .container div {
@@ -132,8 +111,6 @@ body {
   position: relative;
   font-size: 15px;
   font-weight: bold;
-  width: 20.55rem; /*329px;
-  /* height: 36px;*/
   line-height: 40px;
   border: 1px solid #000;
   margin-bottom: 10px;
@@ -156,8 +133,6 @@ a {
 }
 
 .name {
-  /* display: flex;
-  justify-content: space-between; */
   margin-top: 0.5rem;
 }
 .name input {
@@ -167,7 +142,6 @@ a {
   border: 0.4px solid rgba(0, 0, 0, 0.3);
   font-size: 90%;
   padding-left: 10px;
-  /* margin-right: 8px;*/
   margin-bottom: 10px;
 }
 
@@ -176,12 +150,8 @@ a {
   flex-direction: column;
 }
 
-.login-form div {
-  margin-bottom: 1rem;
-}
-
 .login-inner input {
-  width: 20.55rem; /*317px;*/
+  width: 20.55rem;
   height: 40px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -212,7 +182,6 @@ a {
 .seperator p {
   background: #fdfae8;
   color: rgb(0, 35, 51);
-  /*  display: block; */
   margin: -7px auto;
   text-align: center;
   width: 35px;
@@ -225,15 +194,6 @@ a {
 }
 
 .signup {
-  /*
-  height: 40px;
-  width: 20.5rem;
-  line-height: 40px;
-  font-size: 18px;
-  font-weight: 600;
-  background: #00ff84;
-  border-radius: 5px;
-  */
   margin-top: 0.9rem;
 }
 
@@ -242,8 +202,6 @@ a {
   width: 20.5rem;
   height: 40px;
   border: none;
-  /*background: #e1e1c4; /* #cfcba5;  #00ff84;
-  background: linear-gradient(90deg, #ffe44d 0, #ebc700 100%); */
   background: linear-gradient(
     90deg,
     rgba(247, 233, 142, 0.8) 0,
