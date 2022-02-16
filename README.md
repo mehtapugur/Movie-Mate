@@ -156,8 +156,8 @@ CSS and Bootstrap were used for styling.
 
   - To download this project, **Git** must be installed on your computer (or you can download zip file). And you must use **MySQL Workbench**. After these installations open the git terminal. And write the following expression:
 ```makefile
-git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/final-project-mehtapugur
-cd final-project-mehtapugur
+git clone https://github.com/mehtapugur/Movie-Mate
+cd Movie-Mate
 npm install
 
 ```
@@ -221,7 +221,7 @@ npm start
 
 ## :rocket: Project History
 
-<a href="https://github.com/Kodluyoruz-NodeJs-Bootcamp/final-project-mehtapugur/blob/main/project-diary.md">Here<a/>, the project has a development period in Turkish. You can read if you want.<br/><br/>
+<a href="https://github.com/mehtapugur/Movie-Mate/blob/main/project-diary.md">Here<a/>, the project has a development period in Turkish. You can read if you want.<br/><br/>
 
 ## :memo: License
 This project is under the terms of the MIT license.
