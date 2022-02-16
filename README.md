@@ -209,10 +209,12 @@ npm start
     │
     ├── .env
     ├── .gitignore
+    ├── Procfile
+    ├── README.md
+    ├── ormconfig.json
     ├── package-lock.json
     ├── package.json
-    ├── project-diary.md                
-    ├── README.md 
+    ├── project-diary.md                 
     ├── tsconfig.json   
     │
 <br/>
