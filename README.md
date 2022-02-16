@@ -7,7 +7,6 @@
   <a href="#computer-setup">Setup</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#file_folder-project-folder-structure">Structure</a>&nbsp;&nbsp;|&nbsp;
   <a href="#rocket-project-history">History</a>&nbsp;&nbsp;|&nbsp;
-  <a href="#movie_camera-project-video">Video</a>&nbsp;&nbsp;|&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -17,6 +16,8 @@
 
 ## :calling: About
 Movie Mate is a platform where registered users can add, share, delete, update their favorite movies and actors, like and comment on other users' posts.
+
+## 🌏 <a href="https://mmoviemate.herokuapp.com" target="_blank">DEMO LINK</a> 🌏
 
 ## :gear: Technologies
 
@@ -76,7 +77,7 @@ CSS and Bootstrap were used for styling.
   - Registered users can login with their email and password.
   - To register, the password must be a minimum of 8 characters.
   - Users can log into the app with their Google or Facebook account. These users are also registered in the database.
-  - Unfortunately, Google broke my design as the login button is used by default.**:)**<br/><br/>
+  - Unfortunately, Google broke my design as the login button is used by default. **:)** <br/><br/>
 
 | Google Auth | Facebook Auth | 
 | --- | --- | 
@@ -137,7 +138,7 @@ CSS and Bootstrap were used for styling.
 
 ## :ballot_box: MySQL Database
 
-| User Table |  Comments Tables |
+| User Table |  Comments Table |
 | --- | --- |
 | ![2022-02-14 at 06-21-37](https://user-images.githubusercontent.com/24686636/153795454-0b3bf19b-6a32-4f90-9e2b-0c254bcb5e7d.png) | ![2022-02-14 at 06-22-27](https://user-images.githubusercontent.com/24686636/153795661-05bdebd6-0316-49c6-83e9-87ac9abb5871.png) |
 
@@ -153,17 +154,18 @@ CSS and Bootstrap were used for styling.
   
 ## :computer: Setup
 
+  - To download this project, **Git** must be installed on your computer (or you can download zip file). And you must use **MySQL Workbench**. After these installations open the git terminal. And write the following expression:
 ```makefile
 git clone https://github.com/Kodluyoruz-NodeJs-Bootcamp/final-project-mehtapugur
 cd final-project-mehtapugur
 npm install
 
 ```
-and
+  - Create an **.env** file for parameters and create database for datas. And run these comment on comment line:
  ```makefile
-npm run build
 npm start
 ```
+  - Then open http://localhost:5000/ on your browser.
    
 ## :file_folder: Project Folder Structure
     
@@ -215,14 +217,10 @@ npm start
     │
 <br/>
 
-
 ## :rocket: Project History
 
 <a href="https://github.com/Kodluyoruz-NodeJs-Bootcamp/final-project-mehtapugur/blob/main/project-diary.md">Here<a/>, the project has a development period in Turkish. You can read if you want.<br/><br/>
 
-## :movie_camera: Project Video
-  - video  
-  
 ## :memo: License
 This project is under the terms of the MIT license.
 <br/>

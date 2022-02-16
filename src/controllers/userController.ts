@@ -4,11 +4,11 @@
 
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { User } from "../entity/user.entity";
-import { Data } from "../entity/data.entity";
-import { Shared } from "../entity/shared.entity";
-import { Likes } from "../entity/likes.entity";
-import { Comments } from "../entity/comments.entity";
+import { User } from "../entity/User";
+import { Data } from "../entity/Data";
+import { Shared } from "../entity/Shared";
+import { Likes } from "../entity/Likes";
+import { Comments } from "../entity/Comments";
 import { getManager, getConnection } from "typeorm";
 import { RequestHandler } from "express";
 

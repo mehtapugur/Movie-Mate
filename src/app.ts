@@ -7,6 +7,7 @@
 /**
  * Imports
  */
+import * as dotenv from "dotenv";
 import express from "express";
 import session from "express-session";
 import cookieParser from "cookie-parser";
@@ -16,17 +17,19 @@ import bcrypt from "bcrypt";
 import pageRoute from "./routes/pageRoute";
 import userRoute from "./routes/userRoute";
 import { createConnection } from "typeorm";
+import { User } from "./entity/User";
 import { getManager } from "typeorm";
 import passport from "passport";
-import { User } from "./entity/user.entity";
-import { Strategy } from "passport-facebook";
+import Strategy from "passport-facebook";
+const MemoryStore = require("memorystore")(session);
 const { OAuth2Client } = require("google-auth-library");
 const methodOverride = require("method-override");
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
+dotenv.config();
 //create app and use .env variables
 const app = express();
-require("dotenv").config();
+//require("dotenv").config();
 
 // iew engine
 app.set("view engine", "ejs");
@@ -43,13 +46,19 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.set("trust proxy", 1);
+// app.enable("trust proxy");
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     cookie: {
+      sameSite: "none",
+      secure: true,
       maxAge: 600000,
-      httpOnly: true,
     },
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
     resave: false,
     saveUninitialized: true,
   })
@@ -60,19 +69,6 @@ app.use(
     methods: ["POST", "GET"],
   })
 );
-
-//Connection with MySQL database
-// createConnection({
-//   type: "mysql",
-//   host: process.env.HOST,
-//   port: 3306,
-//   username: process.env.USER,
-//   password: process.env.PASSWORD,
-//   database: process.env.DB,
-//   entities: ["src/entity/**/*.ts"],
-//   synchronize: false,
-//   logging: false,
-// });
 
 app.use(
   bodyParser.urlencoded({
@@ -86,7 +82,6 @@ app.use(
 app.post("/googleAuth", (req, res) => {
   //get token
   let token = req.body.token;
-  console.log(token); //TODO delete
 
   //verify user
   async function verify() {
@@ -96,8 +91,6 @@ app.post("/googleAuth", (req, res) => {
     });
 
     const payload = ticket.getPayload();
-    console.log(payload); //TODO delete
-    console.log(payload.email); //TODO delete
     const password = payload.sub;
     const repository = await getManager().getRepository(User);
     //find user in repository
@@ -179,8 +172,9 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/facebook",
+      callbackURL: "https://mmoviemate.herokuapp.com/auth/facebook",
       profileFields: ["id", "name", "emails"],
+      proxy: true,
     },
     async function (accessToken, refreshToken, profile, done) {
       globalThis.token = accessToken;
@@ -230,17 +224,13 @@ app.use(
   }
 );
 
-//start server
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log(`Server is running.`);
-// });
-
+//Connection with MySQL database
 createConnection()
   .then(() => {
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 5000;
 
     app.listen(port, () => {
-      console.log(`Server is running.`);
+      console.log(`Sunucu ${port} portunda başlatıldı`);
     });
   })
   .catch((err) => {
