@@ -172,7 +172,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-      callbackURL: "https://mmoviemate.herokuapp.com/auth/facebook",
+      callbackURL: "http://localhost:5000/auth/facebook",
       profileFields: ["id", "name", "emails"],
       proxy: true,
     },
