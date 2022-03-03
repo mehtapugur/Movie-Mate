@@ -228,11 +228,3 @@ This project is under the terms of the MIT license.
 <br/>
 <br/>
 Contact: [LinkedIn](https://www.linkedin.com/in/mehtapugur)
-  
-```js
-/**
- * Gusto & RemoteTeam Node.js Bootcamp
- * Final Project
- * Mehtap Ugur
- */  
-```
