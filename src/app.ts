@@ -1,10 +1,4 @@
 /**
- * Gusto & RemoteTeam Node.js Bootcamp
- * Final Project
- * Mehtap Ugur
- */
-
-/**
  * Imports
  */
 import * as dotenv from "dotenv";
